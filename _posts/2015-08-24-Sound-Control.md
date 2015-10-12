@@ -2,6 +2,7 @@
 title: Sound Control
 layout: post
 category: game
+image: ld33.jpg
 ---
 
 Sound Control is a game made using Haxeflixel in 48 hours for Ludum Dare 33.
