@@ -1,0 +1,27 @@
+---
+layout: default
+title: Games
+---
+<h1>{{ page.title }}</h1>
+<div class="posts">
+  {% for post in site.posts %}
+  {% if post.category == 'game' %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }} </span>
+
+    {% if post.image %}
+    <img src="{{ site.baseurl }}/assets/{{ post.image }}">
+    {% endif %}
+    {{ post.excerpt }}
+
+    <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
