@@ -2,29 +2,11 @@
 layout: page
 title: About
 ---
+<h2>Cody Claborn</h2>
+![Cody Claborn]({{ site.baseurl }}/assets/mini.png)
+<h3>Programmer/Composer</h3>
+Hi! My name is Cody Claborn and I'm currently a student at Indiana University Purdue University Indianapolis (IUPUI). I'm studying Music Technology with a focus in Media Arts and Science and more specifically game design and development. My other pasion, besides music, is programming. In my free time I'm constantly designing and programming games.
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+I'm heavily involved with the game development community at IUPUI. I help run the [Game Developers Group](http://www.indiana.edu/~gamedev/) on campus. On top of my involvment with students groups I've also been fortunate to take part in a class that created and showed off an alternate reality game called [Return of Aetheria](http://returnofaetheria.org/) at an Indianpolis convention [Indy PopCon](https://indypopcon.com/).
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
-
-There are currently two themes built on Poole:
-
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
-
-Learn more and contribute on [GitHub](https://github.com/poole).
-
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+If you have any questions or want to request more information you can [Contact Me on my site]({{ site.baseurl }}/contact/).
