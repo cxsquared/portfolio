@@ -268,3 +268,20 @@ h1, h2, h3, h4 {
 .page-title, .post-title {
   color:white;
 }
+
+.sidebar .logo {
+  max-width: 40rem;
+  width: 40rem;
+  height: 8rem;
+  margin-left: -5rem;
+}
+
+@media (min-width: 48em) {
+  .sidebar .logo {
+    max-width: 19rem;
+    width: 19rem;
+    overflow: hidden;
+    margin-left: -3rem;
+    margin-bottom: 4rem;
+  }
+}
