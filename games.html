@@ -3,6 +3,9 @@ layout: default
 title: Games
 ---
 <h1>{{ page.title }}</h1>
+
+<p> Here are all the games I've ever created. It's a mixture of game jams, class work, and commercial releases. All of my games have links to where you can play them. Feel free to <a href="{{ site.baseurl }}/contact">contact me</a> if you have any questions or want to possibly colaborate on a project. </p>
+
 <div class="posts">
   {% for post in site.posts %}
   {% if post.category == 'game' %}

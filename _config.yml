@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            Chips and Bits
 tagline:          'Cody Claborns Portfolio'
-description:      'Welcome to the mind of Cody Claborn! Game developer, programmer, and musician all in one package.'
+description:      'Welcome to the mind of Cody Claborn! Game developer. Programmer. Musician. Here is a collection of my games and music.'
 url:              http://codyclaborn.me/
 baseurl:          /dev          
 

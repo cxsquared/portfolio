@@ -281,7 +281,6 @@ h1, h2, h3, h4 {
     width: 19rem;
     overflow: hidden;
     margin-left: -3rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -290,5 +289,13 @@ h1, h2, h3, h4 {
   display: inline;
   margin-right: 1rem;
   margin-left: 1rem;
+}
+
+.highlight {
+  background-color: #808587;
+}
+
+.highlight pre {
+  background-color: #BEC7CC;
 }
 
