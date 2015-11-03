@@ -1,7 +1,7 @@
 ---
 title: Space Cowboy Shooting Gallery
 layout: post
-category: game
+category: gamejam
 image: scsgFull.png
 ---
 

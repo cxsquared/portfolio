@@ -1,7 +1,7 @@
 ---
 title: Sound Control
 layout: post
-category: game
+category: gamejam
 image: ld33.jpg
 ---
 

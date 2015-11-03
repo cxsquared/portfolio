@@ -6,7 +6,7 @@ title: Home
   <!-- Games -->
   <h1>Latest Games</h1>
   {% for post in site.posts %}
-  {% if post.category == 'game' %}
+  {% if post.category == 'released' %}
   {% capture counttwo %}{{ counttwo | plus: '1' }}{% endcapture %}
   {% if counttwo == '1' or counttwo == '2' %}
   <div class="post">

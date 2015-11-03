@@ -1,7 +1,7 @@
 ---
 title: Return of Aetheria
 layout: post
-category: game
+category: released
 image: roa2.jpg
 ---
 

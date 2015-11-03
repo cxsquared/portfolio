@@ -1,7 +1,7 @@
 ---
 title: Fireflies
 layout: post
-category: game
+category: gamejam
 image: firefly.png
 ---
 
