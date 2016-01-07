@@ -1,7 +1,7 @@
 ---
 title: Down the Rabbit Hole
 layout: post
-category: game
+category: gamejam
 image: dtrh1.jpg
 ---
 

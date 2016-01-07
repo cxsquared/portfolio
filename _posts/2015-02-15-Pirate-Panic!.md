@@ -1,7 +1,7 @@
 ---
 title: Pirate Panic!
 layout: post
-category: game
+category: gamejam
 image: pp.jpg
 ---
 
