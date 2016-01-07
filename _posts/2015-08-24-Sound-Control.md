@@ -7,7 +7,7 @@ image: ld33.jpg
 
 Sound Control is a game made using [HaxeFlixel](http://haxeflixel.com) in 48 hours for Ludum Dare 33. The theme was You Are the Monster. I hadn't planned on doing the jam but the theme was too good not to. You can check out my game either by click read more or on the [LudumDare site](http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=23711). You can also checkout the source code on my [Github](https://github.com/cxsquared/ld33-SoundControl).
 
-{% swfobject /dev/assets/games/ld33.swf height:553px width:720px %}<img src="/dev/assets/ld33.jpg">{% endswfobject %}
+{% swfobject /assets/games/ld33.swf height:553px width:720px %}<img src="/assets/ld33.jpg">{% endswfobject %}
 
 #### My entry for the Ludum Dare 33 compo. The theme was You are the Monster.
 
@@ -26,8 +26,7 @@ Here's how I did...
 ![Ratings]({{ site.baseurl }}/assets/scrate.png)
 
 
-### Sound Track
+### Soundtrack
 <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/138137011&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
 Checkout the entry at [LudumDare.com](http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=23711) or the source on [Github](https://github.com/cxsquared/ld33-SoundControl).
->>>>>>> f4b5bd3c71094e177bf9d4850938c85138c828c3

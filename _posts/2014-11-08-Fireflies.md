@@ -11,16 +11,16 @@ Fireflies was a game built in 1 hour during the [0 Hour Game Jame](0hgame.eu). I
 
 This was the original game that was built in just 1 hour.
 
-{% swfobject /dev/assets/games/0hgame-old.swf height:600px width:800px %}<img src="/dev/assets/ogfire.png">{% endswfobject %}
+{% swfobject /assets/games/0hgame-old.swf height:600px width:800px %}<img src="/assets/ogfire.png">{% endswfobject %}
 
 ### Improved
 
 I spent an hour to improve the graphics just to experiment a bit.
 
-<object type="application/x-shockwave-flash" data="/dev/assets/games/0hgame.swf" width=800 height=600>
+<object type="application/x-shockwave-flash" data="/assets/games/0hgame.swf" width=800 height=600>
 <param name="movie" value="games/0hgame.swf">
 <param name="quality" value="high">
-<img src="/dev/assets/firefly.png">
+<img src="/assets/firefly.png">
 </object>
 
 The experience was fun and quite silly to try and create anything working in an 1 hour at 2 in the morning.
