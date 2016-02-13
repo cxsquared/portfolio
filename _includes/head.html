@@ -19,6 +19,13 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+  <!--FullPage.js-->
+  <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}public/apple-touch-icon-144-precomposed.png">
@@ -26,7 +33,6 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-  <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 
   <!-- Piwik -->
   <script type="text/javascript">
@@ -43,5 +49,13 @@
   </script>
   <noscript><p><img src="//codyclaborn.me/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  {% page.title == Games %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#fullpage').fullpage();
+    });
+  </script>
+  {% endif %}
 
 </head>
