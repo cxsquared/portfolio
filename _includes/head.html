@@ -54,7 +54,9 @@
   {% if page.title == "Games" %}
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#fullpage').fullpage();
+      $('#fullpage').fullpage({
+	      scrollOverflow: true,
+      });
     });
   </script>
   {% endif %}
