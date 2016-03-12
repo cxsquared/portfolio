@@ -6,9 +6,9 @@ title: Home
   <!-- Games -->
   <h1>Latest Games</h1>
   {% for post in site.posts %}
-  {% if post.category == 'released' %}
+  {% if post.category == 'released' or post.category == 'gamejam' %}
   {% capture counttwo %}{{ counttwo | plus: '1' }}{% endcapture %}
-  {% if counttwo == '1' or counttwo == '2' %}
+  {% if counttwo == '1' or counttwo == '2' or counttwo == '3' %}
   <div class="post">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
@@ -29,17 +29,12 @@ title: Home
   {% endif %}
   {% endfor %}
   <h3><a href="{{ site.baseurl }}/games/">More Games</a></h3>
-  <!-- Music -->
-  <h1>Latest Music</h1>
-  <div class="post">
-  <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/7355881&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-  </div>
   <!-- Blog -->
   <h1>Latest Posts</h1>
   {% for post in site.posts %}
-  {% if post.category != 'game' %}
+  {% if post.category != 'game' and post.category != 'gamejam' and post.category != 'released' %}
   {% capture count %}{{ count | plus: '1' }}{% endcapture %}
-  {% if count == '1' or count == '2' %}
+  {% if count == '1' or count == '2' or count == '3' %}
   <div class="post">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">

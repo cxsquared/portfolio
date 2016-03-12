@@ -10,3 +10,150 @@ Hi! My name is Cody Claborn and I'm currently a student at Indiana University Pu
 I'm heavily involved with the game development community at IUPUI. I help run the [Game Developers Group](http://www.indiana.edu/~gamedev/) on campus. On top of my involvment with students groups I've also been fortunate to take part in a class that created and showed off an alternate reality game called [Return of Aetheria](http://returnofaetheria.org/) at an Indianpolis convention [Indy PopCon](https://indypopcon.com/).
 
 If you have any questions or want to request more information you can [Contact Me on my site]({{ site.baseurl }}/contact/).
+
+<script type="text/javascript">
+//auto expand textarea
+function adjust_textarea(h) {
+	h.style.height = "20px";
+	h.style.height = (h.scrollHeight)+"px";
+}
+</script>
+
+<style>
+.form-style-7{
+	max-width:500px;
+	background:#607D8B;
+	border-radius:2px;
+	padding:20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 h1{
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0px 0px 20px 0px;
+	color: white;
+	font-size:x-large;
+}
+.form-style-7 ul{
+	list-style:none;
+	padding:0;
+	margin:0;	
+}
+.form-style-7 li{
+	display: block;
+	padding: 9px;
+	border:1px solid #03A9F4;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+.form-style-7 li:last-child{
+	border:none;
+	margin-bottom: 0px;
+}
+.form-style-7 li > label{
+	display: block;
+	float: left;
+	margin-top: -19px;
+	background: #607D8B;
+	height: 14px;
+	padding: 2px 5px 2px 5px;
+	color: #03A9F4;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.form-style-7 input[type="text"],
+.form-style-7 input[type="date"],
+.form-style-7 input[type="datetime"],
+.form-style-7 input[type="email"],
+.form-style-7 input[type="number"],
+.form-style-7 input[type="search"],
+.form-style-7 input[type="time"],
+.form-style-7 input[type="url"],
+.form-style-7 input[type="password"],
+.form-style-7 textarea,
+.form-style-7 select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: #607D8B;
+}
+.form-style-7 input[type="text"]:focus,
+.form-style-7 input[type="date"]:focus,
+.form-style-7 input[type="datetime"]:focus,
+.form-style-7 input[type="email"]:focus,
+.form-style-7 input[type="number"]:focus,
+.form-style-7 input[type="search"]:focus,
+.form-style-7 input[type="time"]:focus,
+.form-style-7 input[type="url"]:focus,
+.form-style-7 input[type="password"]:focus,
+.form-style-7 textarea:focus,
+.form-style-7 select:focus 
+{
+}
+.form-style-7 li > span{
+	background: #B3E5FC;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #888;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.form-style-7 textarea{
+	resize:none;
+	background-color: #607D8B;
+}
+.form-style-7 input[type="submit"],
+.form-style-7 input[type="button"]{
+	background: #2471FF;
+	border: none;
+	padding: 10px 20px 10px 20px;
+	border-bottom: 3px solid #5994FF;
+	border-radius: 3px;
+	color: #D2E2FF;
+}
+.form-style-7 input[type="submit"]:hover,
+.form-style-7 input[type="button"]:hover{
+	background: #6B9FFF;
+	color:#fff;
+}
+</style>
+
+<p>Feel free to contact me regarding jobs or any other information you want.</p>
+
+<form class="form-style-7" action="https://getsimpleform.com/messages?form_api_token=7d46ee5de1f60b07cddbe5f8282aca7c" method="post" id="contact-form" onSubmit="alert('Thank you for your feedback.');">
+	<input type="hidden" name="utf8" value="x">
+	<input type="hidden" name="redirect_to" value="{{ site.url }}">
+	<ul>
+		<li>
+		    	<label for="name">Name</label>
+		        <input type="text" name="name" maxlength="100" required>
+			<span>Enter your name here</span>
+		</li>
+		<li>
+			<label for="email">Email</label>
+			<input type="email" name="email" maxlength="100" required>
+			<span>Enter a valid email address</span>
+		</li>
+		<li>
+			<label for="msg">Message</label>
+			<textarea name="msg" onkeyup="adjust_textarea(this)" row="10" required></textarea>
+			<span>What do you want to talk about?</span>
+		</li>
+		<li>
+			<input type="submit" value="Send" >
+		</li>
+	</ul>
+</form>

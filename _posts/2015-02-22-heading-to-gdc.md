@@ -11,8 +11,8 @@ The time is drawing near when I will take flight and be headed to San Francisco.
 
 I&#8217;ll leave this post with the design of my first business cards that I&#8217;ll be using heavily during GDC.
 
-[<img class="alignnone size-medium wp-image-38" src="http://blog.codyclaborn.me/wp-content/uploads/2015/02/SingleSide-300x176.jpg" alt="Cody Claborn's business card" width="300" height="176" />][1] 
+[<img class="alignnone size-medium wp-image-38" src="{{ site.baseurl }}/wp-content/uploads/2015/02/SingleSide-300x176.jpg" alt="Cody Claborn's business card" width="300" height="176" />][1] 
 
 If you are going to be at GDC make sure to leave a comment and hopefully we&#8217;ll run into each other!
 
- [1]: http://blog.codyclaborn.me/wp-content/uploads/2015/02/SingleSide.jpg
+ [1]: {{ site.baseurl }}/wp-content/uploads/2015/02/SingleSide.jpg
