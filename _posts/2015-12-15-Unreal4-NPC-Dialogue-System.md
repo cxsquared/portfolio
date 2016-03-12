@@ -5,6 +5,10 @@ tags: Unreal4, Tutorial, NPC, Dialogue
 ---
 Most games have some sort of feedback system to let the player know what's happening. These systems can inform the player if they are on the right path, give context to the story, and give help to the player. Dialogue is a great example of one of these feedback systems. For this tutorial I'm going to be showing you have to create an intractable dialogue system in [Unreal Engine 4](https://www.unrealengine.com/what-is-unreal-engine-4). You can download it for free on [their website](https://www.unrealengine.com/register). For this project you can checkout the source code on [my Github](https://github.com/cxsquared/Unreal4_NPC_Dialogue_System).
 
+## Table of Contents
+
+{% include toc.html %}
+
 ##Project Creation
 
 I won't be covering the basics of the Unreal Engine but you should be able to follow along with a very basic knowledge of the engine. The first this we are going to do is launch Unreal from the Epic game Launcher. I'm going to be using version 4.9.2 but this tutorial should work for 4.8+. The first window you'll open to is the Unreal Project Browser. From here click the New Project tab and click the Third Person template. I'm using this template but you should be able to adapt this system to most templates. As for the settings I'm just leaving everything at their defaults.

@@ -7,6 +7,10 @@ This tutorial will help you create a basic visual novel framework that you can u
 
 A lot of this tutorial was adapted and inspired from TheHappieCat’s tutorial on the same subject. You can check out her [channel on Youtube](https://www.youtube.com/user/TheHappieCat) for more awesome game development videos.  If you’d like a more in-deepth look at the basics I recomend checkout out [Unity’s documentation](http://docs.unity3d.com/Manual/UnityBasics.html). 
 
+## Table of Contents
+
+{% include toc.html %}
+
 ##Planning
 
 * Intro
@@ -122,14 +126,14 @@ Now go ahead and do the same thing again for a textbox that will show the name o
 Now we are going to start actually making our game do things. Now this isn’t really a guide to teach you how to code but I will be going through each script and what each function is doing. The first thing we are going to do is write a Dialogue Parser. What this is going to do is take a text file we create which will hold the actual text of what is happening and then present that text to the player. We are going to be using a simple system to allow you to just write and not touch code to add more to the game. The Dialogue file will contain information on the character, what the character should look like, what each character should say, and what choices to give the player.
 Let’s create a basic dialogue script file to show you what the Dialogue Parser will actually do. This step will actually take us out of Unity for a second. Open up your favorite text editor, I’ll be using Sublime Text but Notepad works just fine. Then we’ll write the dialogue in this style.
 
-```
+{% highlight text %}
 Kyle;Hey what's up;0;R
 Orien;Nothing much man;0;L
 Kyle;Oh that's cool;1;R
 Player;Restart:line,0;Continue:line,4
 Kyle;This is a test;2;L
 Orien;Test test test test;2;R
-```
+{% endhighlight %}
 
 So what is happening is that each line will be one line of dialogue that will be shown to the player. When the player clicks their mouse the next line will show. The first part is the character name which will help pick what art to show. The next part after the first “;” is the actual line that will be shown in the dialogue box. After that is what pose you want the character to have. This will be set individually for each character. Each character will have different artwork based on which number is put. The last part is which side of the screen to show the art on to show some motion in the game. Save this file in your Unity Project's Assets folder under a new folder called Data and call the file “Dialogue1.txt”.
 
@@ -141,7 +145,7 @@ When the file opens you should see two function Start() and Update(). Both of th
 
 The first thing you are going to need to do is add a few more using statements to the top of the code. Using just tells Unity that we need to use Scripting Classes that Unity has already made for us to use. We are going to be adding UnityEditor, System.Text, System.IO, System.Text.RegularExpressions, and System.Collections.Generic.
 
-```c#
+{% highlight c# %}
 using UnityEngine;
 using System.Collections;
 using UnityEditor;
@@ -151,11 +155,11 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
 public class DialogueParser : MonoBehaviour {
-```
+{% endhighlight %}
 
 The next line of code is creating a Struct. A Struct is a powerful tool to help us represent something in the code. In this case we are representing a DialogueLine. Each one of our lines has a few components to it. Each line has a name, content, pose, position, and a fifth variable which is going to be the options the player will have when given choices. An important thing to have in the Struct is a constructor. This is the first thing that will be ran when we create each line and it is setting the data of the line for us.
 
-```c#
+{% highlight c# %}
 public class DialogueParser : MonoBehaviour {
 	
 	struct DialogueLine {
@@ -173,11 +177,11 @@ public class DialogueParser : MonoBehaviour {
 			options = new string[0];
 		}
 	}
-```
+{% endhighlight %}
 
 The next thing we need to do is set up a variable to contain all the different lines of dialogue we will have. We are using a List to hold the DialgueLines. You can think of a List as a office cabinet where you can store things with specific labels and in specific orders. The order thing will be very important for us because we want the lines to be shown to the player in a specific order
 
-```c#
+{% highlight c# %}
 public class DialogueParser : MonoBehaviour {
 	
 	struct DialogueLine {
@@ -185,11 +189,11 @@ public class DialogueParser : MonoBehaviour {
 	}
 
 	List<DialogueLine> lines;
-```
+{% endhighlight %}
 
 Now to work with our Start() function. What this function is doing for us is dynamically getting the dialogue file that we saved by looking at the name of the Unity Scene we are in and getting the number from that. It also instantiates the lines List which tells the computer to give use memory to store things in the List because we are about to put things in the List.  And finally we pass our dialogue file location to a new function called LoadDialogue() that we are about to create.
 
-```c#
+{% highlight c# %}
 List<DialogueLine> lines;
 	
 	// Use this for initialization
@@ -209,11 +213,11 @@ List<DialogueLine> lines;
 	void Update () {
 		
 	}
-```
+{% endhighlight %}
 
 Let’s create the LoadDialogue() function. Each function starts with what it will return when called. In this case it’s void because we aren’t returning anything then we have the name of the function, and finally inside the parentheses we have what the function expects to get when called which in our case is a string of the filename. For the function we are using the line variable to store each line we read from the file. To actually read the file we use a StreamReader which job is to do all the low level work for us. Next we have a do-while loop. All this is saying is do this chunk of code, while our line does not equal null aka actually exists. Once there aren’t any more lines this do-while loop will stop. Inside the while we set the line to the current line the StreamReader has. If that is actually a line we then use that data to create a new DialogueLine and store it in our lines. I’m just splitting the line at “;” which is what we used to separate our dialogue parts. Another thing is that if you put Player as the name it’s expecting to give the player options and doesn’t want content, position, or pose. After all that is done we close the StreamReader.
 
-```c#
+{% highlight c# %}
 // Update is called once per frame
 	void Update () {
 		
@@ -245,11 +249,11 @@ Let’s create the LoadDialogue() function. Each function starts with what it wi
 			r.Close();
 		}
 	}
-```
+{% endhighlight %}
 
 That’s the bulk of our dialogue parser done. All we need now is a way to get the line information from the parser to use in different areas like actually setting it as the text box. So what we are going to create are getters for all our DialogueLine variables. The getters has to be public and is going to return something. It’s expecting to get a lineNumber that it will use to get the DialogueLine and find the data to return. Here are all of the getters.
 
-```c#
+{% highlight c# %}
 	void LoadDialogue(string filename) {
 	...
 	}
@@ -289,11 +293,11 @@ That’s the bulk of our dialogue parser done. All we need now is a way to get t
 		return new string[0];
 	}
 }
-```
+{% endhighlight %}
 
 That’s all of the code for our dialogue parser
 
-```c#
+{% highlight c# %}
 using UnityEngine;
 using System.Collections;
 using UnityEditor;
@@ -402,7 +406,7 @@ public class DialogueParser : MonoBehaviour {
 		return new string[0];
 	}
 }
-```
+{% endhighlight %}
 
 Now we need to add it to our game so that it will actually run. To do this go back into Unity, right click in the Hierarchy and click Create Empty. This gives us an empty GameObject to work with. 
 
@@ -416,18 +420,18 @@ So go ahead and click on the GameObject and rename it to Dialogue Parser. To acu
 
 Time for a new Script! This Script will be called “DialogueManager” and it will be the bridge between our DialogueParser and the text boxes that will actually show the game dialogue. So let’s get to it and right click in our Scripts folder and create a new C# Script called “DialogueManager”. Double click on it to open it up in Monodevelop. The first thing we need to do is add a few using at the top: UnityEngine.UI, and System.Collecitons.Generic;
 
-```c#
+{% highlight c# %}
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour {
-```
+{% endhighlight %}
 
 We need a lot more variable this time compared to the DialogueParser. The first thing we need is a DialogureParser so that we can get the information for it to show in the text boxes. Then we need a variable for each thing that we are expecting from the DialogueParser so we need a string for the dialogue, a string for the character name, an int for the line number, an int for the pose, a string for the character position, and a string array (which is created with the [] symbols) for the player decision options to be stored. On top of that we need a boolean (which is just a variable that holds true or false) to see if the player is making a decision and a List to keep track of the buttons we create for the player decisions. Then we need 3 public variables that are going to be the dialogue text box we created earlier, the name text box we created earlier, and a GameObject to hold our choice button prefab. We’ll get to learning about Prefabs a little later in the tutorial.
 
-```c#
+{% highlight c# %}
 public class DialogueManager : MonoBehaviour {
 	
 	DialogueParser parser;
@@ -443,11 +447,11 @@ public class DialogueManager : MonoBehaviour {
 	public Text dialogueBox;
 	public Text nameBox;
 	public GameObject choiceBox;
-```
+{% endhighlight %}
 
 Now let’s get going with the Start() function. Here we are just initializing all our variables so that if we look at them before anything has happened it won’t break the game. For our parser we need to find the DialogueParser GameObject in the Scene. Luckily Unity has a great function for that called Find. This finds any GameObject within in our Scene and since we only have one DialogueParser GameObject we don’t have to worry about Unity finding the wrong one. After the GameObject is found we then have to get the actual DialogueParser script from the GameObject. To do this we just use GetComponent(). Now that we have the DialogueParser script we can get information about each line to show in our text boxes.
 
-```c#
+{% highlight c# %}
 public class DialogueManager : MonoBehaviour {
 	
 	...
@@ -462,11 +466,11 @@ public class DialogueManager : MonoBehaviour {
 		parser = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
 		lineNum = 0;
 	}
-```
+{% endhighlight %}
 
 Unlike the DialogParser class we are going to use the Update() method. The Update() method is called every frame update inside of Unity so the Update() function is constantly called. This function is really useful for constantly keeping track of things like player input in the game. We are going to use to it make detect if the player presses the left mouse button and to keep the UI up-to-date. So everytime the player presses the mouse button and there isn’t player choice options up we show the dialogue and go to the next line number.
 
-```c#
+{% highlight c# %}
 void Start () {
 	...
 }
@@ -481,11 +485,11 @@ void Update () {
 	
 	UpdateUI ();
 }
-```
+{% endhighlight %}
 
 The ShowDialogue() function just calls to other functions that are used to show the Dialogue.
 
-```c#
+{% highlight c# %}
 void Update () {
 	...
 }
@@ -494,11 +498,11 @@ public void ShowDialogue() {
 	ResetImages ();
 	ParseLine ();
 }
-```
+{% endhighlight %}
 
 The ResetImages() function is used to remove any old images for each dialogue line. We wouldn’t want the wrong character staying on screen while someone else was talking. To do this we search for a GameObject with the same name as the character. We don’t have any characters in our Scene right now but we’ll get to that. Then we find the SpriteRenderer Component on the character GameObject. The SpriteRenderer controls what is show on screen just like the Image component did earlier in the tutorial. Then we set the sprite to null. By doing this we are just saying to not show any sprite right now.
 
-```c#
+{% highlight c# %}
 void ResetImages() {
 	if (characterName != "") {
 		GameObject character = GameObject.Find (characterName);
@@ -506,11 +510,11 @@ void ResetImages() {
 		currSprite.sprite = null;
 	}
 }
-```
+{% endhighlight %}
 
 The next thing the ShowDialogue() function does after resetting the images is to parse the current line by calling ParseLine(). First the thing we do is use the parser to get the character name of the line we are on by using the function GetName() that we made back when creating the DialogueParser. We use an If statement to check if the name is “Player”. If it is we know that we want to show player options and if it isn’t we just want to show a normal dialogue line. To show a normal dialogue line we first set playerTalking to false because the player isn’t talking. Then we set all the variables to the matching ones inside the parser. And finally we call DisplayImages() which is going to show the character image on screen. If we need to show player choices we first set playerTalking to true and then set all the variables to a nothing value so that nothing else is show besides the player choices. We get the options from the parser then call CreateButtons() which will use the options to create the buttons the player can click on.
 
-```c#
+{% highlight c# %}
 void ParseLine() {
 	if (parser.GetName (lineNum) != "Player") {
 		playerTalking = false;
@@ -529,11 +533,11 @@ void ParseLine() {
 		CreateButtons();
 	}
 }
-```
+{% endhighlight %}
 
 The next thing we’ll work on is the DisplayImages() function which is in charge of showing the current characters image on screen. We first make sure that a character is talking by checking if characterName isn’t equal to an empty string. If the character is actually a character we go ahead and find their GameObject in the Scene. We then call a function that set’s their location on in the Scene. Finally we get their SpriteRenderer Component and set that to the pose based on their Character Class that we’ll make later on. 
 
-```c#
+{% highlight c# %}
 void DisplayImages() {
 	if (characterName != "") {
 	GameObject character = GameObject.Find(characterName);
@@ -544,11 +548,11 @@ void DisplayImages() {
 		currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
 	}
 }
-```
+{% endhighlight %}
 
 For the SetSpritePositions() function it need to take in a GameObject to move it. Every GameObject has a transform that is used to set the position of the GameObject in the Scene. To set it we just check if the position which we got from the parser is a “L” or a “R”. Then we use the GameObjects transform.position to set it to a new Vector3. A Vector is just a collection of numbers the 3 just says there’s are 3 numbers in the Vector. We are setting the x and y position of the Character. At the end we make sure the Z of the position is set to 0 so that it renders at the correct size. Changing that number would push it closer or farther from the camera.
 
-```c#
+{% highlight c# %}
 void SetSpritePositions(GameObject spriteObj) {
 	if (position == "L") {
 		spriteObj.transform.position = new Vector3 (-6, 0);
@@ -557,11 +561,11 @@ void SetSpritePositions(GameObject spriteObj) {
 	}
 	spriteObj.transform.position = new Vector3 (spriteObj.transform.position.x, spriteObj.transform.position.y, 0);
 }
-```
+{% endhighlight %}
 
 Now let’s look at the second function that can be called from ParseLine() which is CreateButtons(). This function will create the buttons that the player can click to make a decision. To do this we use a for loop which just says run this code as long as i is less than options.Length which is how many options the player will have. We then use Unity’s Instantiate() function to create a new GameObject. This is similar to dragging a GameObject into the Scene or Hierarchy. Then we have to get the Button component and ChioceButton Script off of the button GameObject. We use the ChoiceButton Script to set the Text of the buttno and to set the option of the button so the button knows what to do when it is clicked. And we tell the button the DialogueManager created it by setting cb.box to “this”. The word “this” just means a reference to the current Script DialogueManger in this case. We then make the button a child of whatever GameObject the DialogueManager is connected to. In this case that means the Panel that is part of the Canvas. Then we set the location and scale based on the Panel GameObject. And finally we add the button to the buttons list to keep track of it.
 
-```c#
+{% highlight c# %}
 void CreateButtons() {
 	for (int i = 0; i < options.Length; i++) {
 		GameObject button = (GameObject)Instantiate(choiceBox);
@@ -576,11 +580,11 @@ void CreateButtons() {
 		buttons.Add (b);
 	}
 }
-```
+{% endhighlight %}
 
 After we parse the dialogue we have to update the UI using the UpdateUI() function. If the player isn’t talking we call ClearButtons() which just destroys all buttons in the buttons List. Then we just set the dialogue text and name text to the appropriate string.
 
-```c#
+{% highlight c# %}
 void UpdateUI() {
 	if (!playerTalking) {
 		ClearButtons();
@@ -588,11 +592,11 @@ void UpdateUI() {
 	dialogueBox.text = dialogue;
 	nameBox.text = characterName;
 }
-```
+{% endhighlight %}
 
 Finally we just have to write the ClearButtons() function. This just uses a for loop to loop through all the buttons inside the buttons List. It then sets the button to a variable because we then remove it from the buttons List and then call Destroy() on it which just does what it says and destroys the GameObject.
 
-```c#
+{% highlight c# %}
 void ClearButtons() {
 	for (int i = 0; i < buttons.Count; i++) {
 		print ("Clearing buttons");
@@ -601,11 +605,11 @@ void ClearButtons() {
 		Destroy(b.gameObject);
 	}
 }
-```
+{% endhighlight %}
 
 That’s it for the DialogueManager. If you head back into Unity you’ll probably be getting some errors but that’s fine. Before we can actually add our DialogueManager Script to the game we have to create two more small scripts and learn about Prefabs!
 
-```c#
+{% highlight c# %}
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -735,7 +739,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 }
 
-```
+{% endhighlight %}
 
 ## Prefab Button
 Prefabs in Unity are premade GameObjects that we can use to create new GameObjects on the fly. This is a super powerful tool inside of Unity. First we are going to create the ChoiceButton prefab which will be the button that shows up to give players options of things to do.
@@ -746,7 +750,7 @@ To create our button prefab we first need to create a button attached to the Pan
 
 The next thing we need to do is create a script that will be able to handle when the button is clicked. So right click in your Project Browser in your Scripts folder and create a new C# Script. Name this Script “ChoiceButton” and then open it by double clicking on it. This Script is going to be a lot smaller than the last two scripts. We first need two variables, one string to hold the option for the button and a variable to hold the DialogueManager.
 
-```c#
+{% highlight c# %}
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -755,27 +759,27 @@ public class ChoiceButton : MonoBehaviour {
 	
 	public string option;
 	public DialogueManager box;
-```
+{% endhighlight %}
 
 We don’t need to touch the Start() or Update() function so the next thing we are going to do is create a function called SetText() which takes in a string as it’s argument. All this function is doing is finding the text in the button and setting it to something new.
 
-```c#
+{% highlight c# %}
 public void SetText(string newText) {
 	this.GetComponentInChildren<Text> ().text = newText;
 }
-```
+{% endhighlight %}
 
 The next function, SetOpiton() does almost the same thing as the last function except it sets the option instead of the text. The option is going to be what we will look at to determine what to do when the button is clicked
 
-```c#
+{% highlight c# %}
 public void SetOption(string newOption) {
 	this.option = newOption;
 }
-```
+{% endhighlight %}
 	
 The final function is ParseOpiton() which is what is going to happen when the Player clicks the button. We first split the option at the ‘,’ to separate the command from the number. After we have the command and the number we tell the DialogueManager that the player isn’t talking anymore because they’ve clicked the button. We then use an if statement to check if the option is going to change the line the player is on or change the scene. If they are changing the line then we just change the line inside of the DialogueManager. If it’s changing the scene we use a Unity class called Application to load the scene we want.
 
-```c#
+{% highlight c# %}
 public void ParseOption() {
 	string command = option.Split (',') [0];
 	string commandModifier = option.Split (',') [1];
@@ -787,11 +791,11 @@ public void ParseOption() {
 		Application.LoadLevel("Scene" + commandModifier);
 	}
 }
-```
+{% endhighlight %}
 
 Here's the complete ChoiceButton Script.
 
-```c#
+{% highlight c# %}
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -832,11 +836,11 @@ public class ChoiceButton : MonoBehaviour {
 	}
 }
 
-```
+{% endhighlight %}
 
 Now that this is done we want to attach the ChoiceButton Script to the button object we’ve already created on the Panel. But before we do that we have to clear all the errors. To do this just create a new Script in the Project Browser called Character. Open up the Character Script you just created and add one variable called characterPoses that will be a Sprite array. 
 
-```c#
+{% highlight c# %}
 using UnityEngine;
 using System.Collections;
 
@@ -854,7 +858,7 @@ public class Character : MonoBehaviour {
 	
 	}
 }
-```
+{% endhighlight %}
 Once this is done go back to Unity and you shouldn’t have any errors. So now add the ChoiceButton Script to our button GameObject. Do this by either dragging the script to the GameObject in the Hierarchy or clicking Add Component in the buttons Inspector.
 
 ![Choice Button]({{ site.baseurl }}/assets/vntut/19_ChoiceButton.png)
