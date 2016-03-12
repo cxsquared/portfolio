@@ -4,24 +4,19 @@ highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
 title:            Chips and Bits
 tagline:          'Cody Claborns Portfolio'
 description:      'Welcome to the mind of Cody Claborn! Game developer. Programmer. Musician. Here is a collection of my games and music.'
 url:              http://codyclaborn.me/
-baseurl:          /dev    
+baseurl:              
 
 author:
   name:           'Cody Claborn'
   url:            https://twitter.com/cxsquared
 
+gems: [jekyll-paginate]
+
 paginate:         5
 paginate_path: "/blog/page:num/"
-
-# Custom vars
-version:          2.1.0
-
-github:
-  repo:           https://github.com/poole/hyde

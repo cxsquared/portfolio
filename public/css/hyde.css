@@ -88,7 +88,9 @@ html {
   margin-bottom: 1rem;
 }
 .sidebar-nav-item {
-  display: block;
+  display: inline;
+  margin-left: 1rem;
+  margin-right: auto;
   line-height: 1.75;
 }
 a.sidebar-nav-item:hover,
@@ -262,6 +264,7 @@ h1, h2, h3, h4 {
 }
 
 .lead {
+  font-size: 1rem;
   color: #355267;
 }
 
@@ -272,7 +275,16 @@ h1, h2, h3, h4 {
 .sidebar .logo {
   max-width: 200%;
   width: 100%;
-  height: 8rem;
+  height: 5rem;
+}
+
+.sidebar-about h1 {
+  font-size: 2rem;
+}
+
+.music-player {
+  visibility: hidden;
+  position: fixed;
 }
 
 @media (min-width: 48em) {
@@ -282,6 +294,11 @@ h1, h2, h3, h4 {
     overflow: hidden;
     margin-left: -3rem;
   }
+
+  .music-player {
+    visibility: visible;
+    position: relative;
+  }
 }
 
 .social img {
@@ -289,6 +306,10 @@ h1, h2, h3, h4 {
   display: inline;
   margin-right: 1rem;
   margin-left: 1rem;
+}
+
+.music-player {
+
 }
 
 .highlight {

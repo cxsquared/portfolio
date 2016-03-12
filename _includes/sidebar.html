@@ -11,17 +11,12 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
-
-      <a class="sidebar-nav-item{% if page.url == site.baseurl/about %} active{% endif %}" href="{{site.baseurl }}/about">About</a>
 
       <a class="sidebar-nav-item{% if page.url == site.baseurl/games %} active{% endif %}" href="{{site.baseurl }}/games">Games</a>
 
-      <a class="sidebar-nav-item{% if page.url == site.baseurl/music %} active{% endif %}" href="{{site.baseurl }}/music">Music</a>
-
       <a class="sidebar-nav-item{% if page.url == site.baseurl/blog %} active{% endif %}" href="{{site.baseurl }}/blog">Blog</a>
-
-      <a class="sidebar-nav-item{% if page.url == site.baseurl/contact %} active{% endif %}" href="{{site.baseurl }}/contact">Contact Me</a>
+      
+      <a class="sidebar-nav-item{% if page.url == site.baseurl/about %} active{% endif %}" href="{{site.baseurl }}/about">About</a>
 
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
@@ -36,8 +31,11 @@
         {% endif %}
       {% endfor %}
       {% endcomment %}
-    </nav>
+      </nav>
 
+      <div class="music-player"> 
+	      <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/7355881&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+      </div>
     <div class="social">
       <a href="https://twitter.com/Cxsquared" target="_blank"><img src="{{ site.baseurl }}/assets/icons/Twitter.png"></a>
       <a href="https://github.com/cxsquared" target="_blank"><img src="{{ site.baseurl }}/assets/icons/Github.png"></a>
