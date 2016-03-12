@@ -11,7 +11,7 @@ This<span style="line-height: 1.5;"> year was my second Global Game Jam and I r
 
 **Pirate Panic!**
 
-[<img class="alignnone size-medium wp-image-33" src="http://blog.codyclaborn.me/wp-content/uploads/2015/02/pilot-263x300.png" alt="pilot" width="263" height="300" />][1] 
+[<img class="alignnone size-medium wp-image-33" src="{{ site.baseurl }}/wp-content/uploads/2015/02/pilot-263x300.png" alt="pilot" width="263" height="300" />][1] 
 
 Pirate Panic! is a multiplayer pirate combat experience. Five people each take control of a different role on a ship. You have you captain, the organizer of the group who is the only one who can see the map and the enemies. Then there&#8217;s the pilot who controls the direction and speed of the ship. The gunner who loads and fires the cannon. The engineer who plugs the hole in the ship and empties the ever increasing water slowing everyone else down. And finally the lonely cabin boy who distributes supplies to the rest of the crew and keeps the ship nice and clean. They must work together communicating and yelling at one another to go destroy the enemy.
 
@@ -39,11 +39,11 @@ We tried our hardest to manage our time well but we had to work down till the l
 
 * * *
 
-[<img class="alignnone size-medium wp-image-32" src="http://blog.codyclaborn.me/wp-content/uploads/2015/02/cabin-265x300.png" alt="cabin" width="265" height="300" />][2] 
+[<img class="alignnone size-medium wp-image-32" src="{{ site.baseurl }}/wp-content/uploads/2015/02/cabin-265x300.png" alt="cabin" width="265" height="300" />][2] 
 
 **Final Thoughts&#8230;**
 
 I went into this year&#8217;s Global Game Jam wanting to meet new people and really push myself and that&#8217;s just what I did. In the end my team had a really fun game concept and produced a pretty playable prototype. We went big and made something that was pretty fun. I accomplished all that I set out to do and I can&#8217;t wait for next year. I invite anyone and everyone to go to Global Game Jam next year and I promise you won&#8217;t regret it.
 
- [1]: http://blog.codyclaborn.me/wp-content/uploads/2015/02/pilot.png
- [2]: http://blog.codyclaborn.me/wp-content/uploads/2015/02/cabin.png
+ [1]: {{ site.baseurl }}/wp-content/uploads/2015/02/pilot.png
+ [2]: {{ site.baseurl }}/wp-content/uploads/2015/02/cabin.png
