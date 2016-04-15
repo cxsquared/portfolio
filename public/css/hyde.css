@@ -369,7 +369,8 @@ h1, h2, h3, h4 {
  }
  
  .toc li>a:hover,.toc li>a:focus{
-  background:#dfdfdf
+  background:#dfdfdf;
+  color: #355267;
  }
 
  .toc h6{
