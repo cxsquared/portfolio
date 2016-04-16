@@ -16,4 +16,6 @@ For the longest time I've loved both programming and audio so it's only natural 
 
 Luckily in early 2015 I was lucky enough to get access to the [GDC Vault](http://www.gdcvault.com/) which is a collection of almost all the talks given at each Game Developers Conference. Inside the vault there was a talk given by Guy Somberg, who at that time was working at [Telltale Games](https://www.telltalegames.com/), about creating a basic audio engine. This was exactly what I needed to get my start in the audio programming world. A lot of this tutorial is based off his talk at GDC but from my prospective of coming from almost knowing nothing about C++. Hopefully this will be the tutorial that helps others get started creating cool audio programming things.
 
+## Downloading
 
+The first thing you'll have to do is download the FMOD Studio Programmer API for which ever platform you plan to work on. For this tutorial I'm going to go over setting up your environment for both Xcode on OSX and Visual Studio on Windows. The one down side to using FMOD is that you have to sign-up for their site to download the programmer API. 
