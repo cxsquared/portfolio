@@ -1,22 +1,31 @@
 # Dependencies
-markdown:         kramdown
-highlighter:      pygments
+markdown:       kramdown
+highlighter:    pygments
 
 # Permalinks
-permalink:        pretty
+permalink:      pretty
 
 # Setup
-title:            Chips and Bits
-tagline:          'Cody Claborns Portfolio'
-description:      'Welcome to the mind of Cody Claborn! Game developer. Programmer. Musician. Here is a collection of my games and music.'
-url:              http://codyclaborn.me/
+title:          Chips and Bits
+tagline:        'Cody Claborns Portfolio'
+description:    'Welcome to the mind of Cody Claborn! Game developer. Programmer. Musician. Here is a collection of my games and music.'
+url:             http://codyclaborn.me/
 baseurl:              
 
 author:
-  name:           'Cody Claborn'
+  name:          'Cody Claborn'
   url:            https://twitter.com/cxsquared
+  twitter:        cxsquared
 
-gems: [jekyll-paginate, jekyll-seo-tag]
+twitter:
+  username:       cxsquared
+
+logo:             /assets/logo.svg
+
+social:
+  links: [https://twitter.com/cxsquared, https://github.com/cxsquared, https://soundcloud.com/cxsquared, https://www.linkedin.com/in/cxsquared]
+
+gems: [jekyll-paginate, jekyll-seo-tag, jekyll-swfobject]
 
 paginate:         5
 paginate_path: "/blog/page:num/"

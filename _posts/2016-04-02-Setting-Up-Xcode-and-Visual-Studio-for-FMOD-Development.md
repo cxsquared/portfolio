@@ -18,4 +18,4 @@ Luckily in early 2015 I was lucky enough to get access to the [GDC Vault](http:/
 
 ## Downloading
 
-The first thing you'll have to do is download the FMOD Studio Programmer API for which ever platform you plan to work on. For this tutorial I'm going to go over setting up your environment for both Xcode on OSX and Visual Studio on Windows. The one down side to using FMOD is that you have to sign-up for their site to download the programmer API. 
+The first thing you'll have to do is download the FMOD Studio Programmer API for which ever platform you plan to work on. For this tutorial I'm going to go over setting up your environment for both Xcode on OSX and Visual Studio on Windows. The one down side to using FMOD is that you have to sign-up for their site to download the programmer API.
