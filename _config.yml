@@ -1,6 +1,6 @@
 # Dependencies
 markdown:       kramdown
-highlighter:    pygments
+highlighter:    Pygments
 
 # Permalinks
 permalink:      pretty
@@ -23,7 +23,7 @@ twitter:
 logo:             /assets/logo.svg
 
 social:
-  links: [https://twitter.com/cxsquared, https://github.com/cxsquared, https://soundcloud.com/cxsquared, https://www.linkedin.com/in/cxsquared]
+  links: ["https://twitter.com/cxsquared", "https://github.com/cxsquared", "https://soundcloud.com/cxsquared", "https://www.linkedin.com/in/cxsquared"]
 
 gems: [jekyll-paginate, jekyll-seo-tag, jekyll-swfobject]
 
