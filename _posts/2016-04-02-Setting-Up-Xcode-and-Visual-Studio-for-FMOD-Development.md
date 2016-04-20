@@ -70,6 +70,20 @@ xcopy /y /d "(Path-To-Libraries )\*.dll" "$(OutDir)"
 
 ## Xcode
 
+For this tutorial I'm going to be starting with a new project but you can easily use these steps to integrate the FMOD API into your own current project. So I'm going to create a new blank C++ project in Xcode to work off. OS X actually makes integrating FMOD super easy. We only need to go add two settings which are for header and libraries. To find these settings you just need to click on your project then click on **Build Settings**  which will bring up the build options window.
+
+![Xcode Build Settings]({{ site.baseurl }}/assets/FmodTutorials/IDE_07.png)
+
+The first setting we are looking for is **Other Linking Flags**. You can scroll down to the **Linking** section or just type it in the search bar near the top of the window. Once you find it click the little down arrow next to the option. This will show the Release and Debug options which will be different for FMOD. For the Debug version we'll want to add two different files. We need to add **libfmodL.dylib** and **libfmodstudioL.dylib**. Mine are located at **/Development/FMOD Programmers API/api/lowlevel/lib** and **/Development/FMOD Programmers API/api/studio/lib** but yours will be where ever you installed the API. For the Release setting the files are in the same location but you'll want to use **libfmodstudio.dylib** and **libfmod.dylib**. This is what the settings should look like...
+
+![Xcode Linker Settings]({{ site.baseurl }}/assets/FmodTutorials/IDE_08.png)
+
+The next option we'll change is **Header Search Paths**. Unlike the library linking this option is the same for both the release and debug version. You can find the settings either by searching for it or finding it under the **Search Paths** section. The paths we'll want to add are the locations of the header files for FMOD. For me these are located at **/Development/FMOD Programmers API/api/lowlevel/inc/** and **/Development/FMOD Programmers API/api/studio/inc/** but yours might be in a different location. You settings should look like this...
+
+![Xcode includes]({{ site.baseurl }}/assets/FmodTutorials/IDE_09.png)
+
+And at this point you can use the FMOD API in your project now. Do note though to get your project to actually run you'll need to have the FMOD libraries in the same location as the application. 
+
 ## Conclusion
 
 Now you can build your own audio engine using FMOD. In the next tutorial I'll go over creating a basic implementation that uses both programmer sounds (single sound files) and FMOD events.
