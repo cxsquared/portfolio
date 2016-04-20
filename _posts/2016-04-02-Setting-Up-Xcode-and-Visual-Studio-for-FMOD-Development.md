@@ -8,8 +8,6 @@ This tutorial series is going to be all about starting out as an Audio Programme
 
 I will say this isn't a tutorial on how to use [FMOD Studio](http://www.fmod.org/products/). While you'll be able to use FMOD Studio events with this audio engine, this tutorial is solely concentrating on the programming side of FMOD. If you want a good tutorial on FMOD Studio you should check out the tutorial series from my friend Chris Prunotto over on his site [SoundGuyChris.com](http://blog.soundguychris.com/2014/04/15/an-introduction-to-fmod-part-1/).
 
-## Table of Contents
-
 {% include toc.html %}
 
 ## Introduction

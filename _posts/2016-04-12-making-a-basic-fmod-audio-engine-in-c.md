@@ -5,8 +5,6 @@ layout: post
 
 In my previous post, [Setting Up Xcode and Visual Studio for FMOD Development]({% post_url 2016-04-02-Setting-Up-Xcode-and-Visual-Studio-for-FMOD-Development %}), I talked about getting your IDE enviroment ready for creating an FMOD audio engine implementation. In this tutorial I'll go over creating a basic audio engine that you can use in your C++ projects to add quick and easy dynamic audio. This engine will be able to handle both single audio files and FMOD Studio Events to give you lots of flexibility. So let's get to the code.
 
-## Table of Contents
-
 {% include toc.html %}
 
 ## Engine Organization
@@ -55,7 +53,7 @@ So now what do we need to include in our header. Well for starters we need the F
 
 One little line you'll want to include after your usings is
 
-{% highliht c+ %}
+{% highlight c++ %}
 using namespace std;
 {% endhighlight %}
 
@@ -107,7 +105,7 @@ struct Implementation {
 
 The last thing in the header is the deffinition of the audio engine. The engine class will do calls to the **Implementation** struct to start, stop, and update FMOD. The engine will also handle basic things like loading, playing, stoping, and updating information on sounds and events. We'll go over each function in more detail when we write the logic behind them. For now the **Audio Engine** class should look like this...
 
-{% highlight c++ }
+{% highlight c++ %}
 
 class CAudioEngine {
 public:
@@ -143,3 +141,4 @@ And that's it for the header file. If you need to look at he full header file yo
 
 ## Audio Engine Source Code
 
+Now we can start getting to work on the real task here which is getting sound happening in our project.s
