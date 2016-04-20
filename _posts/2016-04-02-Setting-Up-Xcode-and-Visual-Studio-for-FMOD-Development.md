@@ -26,4 +26,52 @@ So go to the [FMOD.org](http://www.fmod.org/download/) and click the downloads t
 
 ## Installation
 
-The installation is fairly easy and simple for both platforms. Just open either the .exe or .dmg and follow the steps on the screen. Do remember where you end up installing the files though because we will be referring back to them later.
+The installation is fairly easy and simple for both platforms. Just open either the .exe or .dmg and follow the steps on the screen. What is being installed are the libraries, headers, documentation, and examples of the API. Do remember where you end up installing the files though because we will be referring back to them later. We'll need to link our projects against the libraries and include the headers in our projects. Once we get through this and get everything working I do recomend looking at the examples because they can provide insight and ideas on how to utilize the FMOD API. And when you are working with FMOD the API documention will at least list the function calls and variables and does explain some (but not all) things going on. Now that we've got everything installed let's look at the steps we need to take for Visual Studio and Xcode to acutally use FMOD.
+
+## Visual Studio
+
+I'm going to be starting on a blank project but you can easily add these things to an already started project to get FMOD going. If you are on OS X just go ahead and skip to the Xcode section unless you are planning on possible working on both systems while developing.
+
+So go ahead and either start a new project or open up and existing project that you want to add FMOD functionallity to. Adding FMOD to your projects is actually quite easy and you really only need to take two steps to get things working. So to get the FMOD API to be recognized by our project we need to both include the header files and link the libraries. Both of these things are done by opening up the projects properties. To do this in visual studio just right-click on your project and the last option in the drop down menu should be properties.
+
+![Visual Studio Project Properties]({{ site.baseurl }}/assets/FmodTutorials/IDE_00.png)
+
+Once you have the properties window open the first thing we'll want to do is click on the **C/C++** tab under **Configuration Properites**. (If you've started a new project and don't see a **C/C++** tab you just need to create a new .cpp file inside your project first.) Inside this tab the first option to your right should be **Additional Include Directories**. Here is where we are going to tell Visual Studio where the FMOD header files are located. So hover over the input field next to that option, click the arrow to the right, and select edit.
+
+![C/C++ Include Window]({{ site.baseurl }}/assets/FmodTutorials/IDE_01.png)
+
+In this window we are going to set the paths to both the FMOD Studio and Low-Level API include files. This can be done by either double-clicking in the window and typing in your location or clicking the little three dot button to open a file browser. Our first line is going to be the FMOD Low-Level include folder. This is located where ever you installed the FMOD API. It's typically located in **C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\lowlevel\inc** though yours might be a little different. Now you can click bellow that entry and select the path for the FMOD Studio includes which is normally at **C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\studio\inc**. That's it for the includes. Here's what mine looks like...
+
+![C/C++ Include Directories]({{ site.baseurl }}/assets/FmodTutorials/IDE_02.png)
+
+Next we need to link the libraries for both FMOD Studio and Low-Level. This is done in two steps. We need to first tell Visual Studio where the files are located, then what files to use. The location option is under **Configuration Properties** -> **Linker** -> **General**. In the window for this tab you should see an option called **Aditional Library Diretories**. Click the arrow to the right of the input field just like the additional includes to pull up the library directories window.
+
+![Linker Library Include Window]({{ site.baseurl }}/assets/FmodTutorials/IDE_03.png)
+
+In this window we'll add the FMOD Studio and Low-Level libraries folders just like the include folders. The paths are normally **C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\lowlevel\lib** and **C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\studio\lib**. Here's what mine looks like afterwards.
+
+![Linker Libraries Directories]({{ site.baseurl }}/assets/FmodTutorials/IDE_04.png)
+
+For the final step in linking we need to tell Visual Studio exactly what files to use. This option is found in **Configuration Properties** -> **Linker** -> **Input**. The first option and the one we need is **Additional Dependencies**. Now this can vary from the Release version and the Debug version.  To change what version you are modifing you can click the drop down menu next to **Configuration** at the top of the window. I'll start with the release version. Open up the **Aditional Dependiencies** window just like the past two directories windows. The two files we need are **fmod_vc.lib** and **fmodstudio_vc.lib**. Make sure to add these two on seperate lines in the window. Click ok and switch to the debug version of the project. The files we need to add here are **fmodL_vc.lib** and **fmodstudioL_vc.lib**. Here's what my Release and Debug version look like.
+
+Release
+![Release depedencies]({{ site.baseurl }}/assets/FmodTutorials/IDE_05.png)
+
+Debug
+![Debug depedencies]({{ site.baseurl }}/assets/FmodTutorials/IDE_06.png)
+
+And that's really it for setting up Visual Studio. You'll now be able to create your own audio engine using FMOD. One extra little thing I like to do is add a **Post-Build Event** that copies over the libraries need to run the .exe when I build the project. The commands I use are...
+
+{% highlight bash %}
+
+xcopy /y /d "(Path-To-Libraries )\*.dll" "$(OutDir)"
+
+{% endhighlight %}
+
+## Xcode
+
+## Conclusion
+
+Now you can build your own audio engine using FMOD. In the next tutorial I'll go over creating a basic implementation that uses both programmer sounds (single sound files) and FMOD events.
+
+
