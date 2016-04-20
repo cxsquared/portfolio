@@ -420,3 +420,4 @@ h1, h2, h3, h4 {
   .toc-left ul{margin-bottom:.809em}
  }
 
+ pre { white-space: pre; overflow: auto; }

@@ -141,4 +141,77 @@ And that's it for the header file. If you need to look at he full header file yo
 
 ## Audio Engine Source Code
 
-Now we can start getting to work on the real task here which is getting sound happening in our project.s
+Now we can start getting to work on the real task here which is getting sound happening in our project. The header file was us just telling the program what functions and variables can exists where are source file is what contains the actual logic. Let's start by creating an AudioEngine.cpp file and we'll jump right in.
+
+The first thing we need to do is tell the file that we are using the AudioEngine.h header file. To do with we write...
+
+{% highlight c++ %}
+
+#include "AudioEngine.h"
+
+{% endhighlight %}
+
+### Implementation
+This is where we will initialize the underlying FMOD system that will allow us to play sounds. We'll start with the **Implementation** constructor which creates the FMOD Studio and Low-Level systems and set's it's variables.
+
+{% highlight c++ %}
+
+Implementation::Implementation() {
+    mpStudioSystem = NULL;
+    CAudioEngine::ErrorCheck(FMOD::Studio::System::create(&mpStudioSystem));
+    CAudioEngine::ErrorCheck(mpStudioSystem->initialize(32, FMOD_STUDIO_INIT_LIVEUPDATE, FMOD_INIT_PROFILE_ENABLE, NULL));
+
+    mpSystem = NULL;
+    CAudioEngine::ErrorCheck(mpStudioSystem->getLowLevelSystem(&mpSystem));
+}
+
+{% endhighlight %}
+
+**CAudioEngine::ErrorCheck** is just a way for us to check that all FMOD calls are successful and we'll cover that later. As you can see the first thing we do is create the FMOD Studio System that handles all events and sounds. We then initialize the system and that takes in the number of channels, then flags that can change the way the system runs. The **FMOD_STUDIO_INIT_LIVEUPDATE** is a really cool feature where you can connect to your game with FMOD Studio and live mix the audio. Then to allow us to handle things at a lower level we call **getLowLevelSystem** which gives us the Low-Level system.
+
+Next we create the deconstructor which cleans up FMOD and makes sure we don't leave anything behind. It's super simple and we just unload all assets and then shutdown FMOD.
+
+{% highlight c++ %}
+
+Implementation::~Implementation() {
+    CAudioEngine::ErrorCheck(mpStudioSystem->unloadAll());
+    CAudioEngine::ErrorCheck(mpStudioSystem->release());
+}
+
+{% endhighlight %}
+
+Now we work on the update function of the **Implement** struct. In this function we check if a channel has stopped playing, if it has, we destroy it so we can clear up a channel to use. Other than that we just call the update function on the FMOD system to update the event sounds.
+
+{% highlight c++ %}
+
+void Implementation::Update() {
+    vector<ChannelMap::iterator> pStoppedChannels;
+    for (auto it = mChannels.begin(), itEnd = mChannels.end(); it != itEnd; ++it)
+    {
+        bool bIsPlaying = false;
+        it->second->isPlaying(&bIsPlaying);
+        if (!bIsPlaying)
+        {
+             pStoppedChannels.push_back(it);
+        }
+    }
+    for (auto& it : pStoppedChannels)
+    {
+         mChannels.erase(it);
+    }
+    CAudioEngine::ErrorCheck(mpStudioSystem->update());
+}
+
+{% endhighlight %}
+
+And then finally we create an instance of the Implementation so that we can actually use it.
+
+{% highlight c++ %}
+
+Implementation* sgpImplementation = nullptr;
+
+{% endhighlight %}
+
+### Audio Engine
+
+
