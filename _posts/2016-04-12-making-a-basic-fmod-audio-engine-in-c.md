@@ -5,6 +5,10 @@ layout: post
 
 In my previous post, [Setting Up Xcode and Visual Studio for FMOD Development]({% post_url 2016-04-02-Setting-Up-Xcode-and-Visual-Studio-for-FMOD-Development %}), I talked about getting your IDE enviroment ready for creating an FMOD audio engine implementation. In this tutorial I'll go over creating a basic audio engine that you can use in your C++ projects to add quick and easy dynamic audio. This engine will be able to handle both single audio files and FMOD Studio Events to give you lots of flexibility. So let's get to the code.
 
+I will say like my last tutorial this isn't a tutorial on how to use [FMOD Studio](http://www.fmod.org/products/). While you'll be able to use FMOD Studio events with this audio engine, this tutorial is solely concentrating on the programming side of FMOD. If you want a good tutorial on FMOD Studio you should check out the tutorial series from my friend Chris Prunotto over on his site [SoundGuyChris.com](http://blog.soundguychris.com/2014/04/15/an-introduction-to-fmod-part-1/).
+
+Also a big shout out to Guy Somberg who inspired me to write these tutorials and actual originally created a lot of this code in his GDC talks. If you have a chance I highly recommend you checking them out on the [GDC Vault](http://gdcvault.com/).
+
 {% include toc.html %}
 
 ## Engine Organization
