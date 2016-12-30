@@ -10,13 +10,13 @@ Most games have some sort of feedback system to let the player know what's happe
 
 {% include toc.html %}
 
-##Project Creation
+## Project Creation
 
 I won't be covering the basics of the Unreal Engine but you should be able to follow along with a very basic knowledge of the engine. The first this we are going to do is launch Unreal from the Epic game Launcher. I'm going to be using version 4.9.2 but this tutorial should work for 4.8+. The first window you'll open to is the Unreal Project Browser. From here click the New Project tab and click the Third Person template. I'm using this template but you should be able to adapt this system to most templates. As for the settings I'm just leaving everything at their defaults.
 
 ![Creation]({{ site.url }}/assets/u4NPC/00_Creation.png)
 
-##Structs
+## Structs
 
 We are going to be creating a system where you can input what each NPC says without having to add any new code or modifying any blueprints after we have finished. For this system we are going to set up two different blueprint structures or structs. Structs are basically just templates that allow you to predefine data so that the engine knows what kind of data to expect when we use the struct. For organization purposes I'm going to create my own folder in the Content folder just so there's just one location for everything I add to a project. To create a new folder just right-click on the Content folder inside the Content Browser then just click on new folder. I'm going to name mine "NPCDialogueSystem". Inside that folder I'm going to create one more folder called "Blueprints" just to keep super organized. This is very important once your projects start to get larger.
 
@@ -38,7 +38,7 @@ Close that window and open the PlayerResponse struct so that we can set that up.
 
 ![Player Response]({{ site.url}}/assets/u4NPC/04_PlayerResponse.png)
 
-##Widgets
+## Widgets
 
 To show our text in the world we are going to use a thing called a Widget Blueprint. Widget Blueprints are normally used to create user interfaces (UI) or 2D text/images in the game. For our system we are going to use two Widget Blueprints to show the text of the player/NPC talking and to show the possible player responses. To create a Widget Blueprint right-click in the Content Browser, hover over the User Interface menu and then select Widget Blueprint.
 
@@ -56,7 +56,7 @@ Now let's open the PlayerOptions widget. This one is going to similar to the Dia
 
 ![Player Options Widget]({{ site.url}}/assets/u4NPC/07_OptionsWidget.png)
 
-##Player Blueprint
+## Player Blueprint
 
 The next thing we are going to do is make it so that the player can say things. We are going to modify the Player Blueprint class Unreal gives us in the Third person template. To find this blueprint find the folder called ThirdPersonBP in the Content folder. Inside that folder there is a folder call Blueprints and inside that folder there is a blueprint called ThridPersonCharacter. Double click on that to open up the ThirdPersonCharacter blueprint. 
 
@@ -92,7 +92,7 @@ To actually get this update to happen go back into your Event Graph, right-click
 
 ![Player Event Graph]({{ site.url }}/assets/u4NPC/14_PlayerEventGraph.png)
 
-##NPC Blueprint
+## NPC Blueprint
 
 Now that we have our structs set up and the player can talk we can actually start creating the NPC blueprint that will be used inside the engine. To create one right-click inside the folder and click on Blueprint Class. A menu called Pick Parent Class will pop up. For this we will just click on Actor because for this tutorial our NPC character won't be controlled by any controllers.
 
@@ -157,4 +157,3 @@ Now one last step to actually getting input to work. Click on BP_NPC(self) under
 ![NPC Statment Example]({{ stie.url }}/assets/u4NPC/28_NPCStatement.png)
 
 You could go a lot of different places from here by cleaning up the code and adding new features. You could have the responses matter by just adding simple branch checks to see what response the player gave. You could also create children blueprints to use this system as just a starting point for something bigger. I hope you enjoyed this tutorial. You tweet to questions to @Cxsquared.
-                                                                                                                     
