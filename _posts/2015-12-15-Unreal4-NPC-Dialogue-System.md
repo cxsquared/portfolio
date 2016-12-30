@@ -156,4 +156,4 @@ Now one last step to actually getting input to work. Click on BP_NPC(self) under
 
 ![NPC Statment Example]({{ stie.url }}/assets/u4NPC/28_NPCStatement.png)
 
-You could go a lot of different places from here by cleaning up the code and adding new features. You could have the responses matter by just adding simple branch checks to see what response the player gave. You could also create children blueprints to use this system as just a starting point for something bigger. I hope you enjoyed this tutorial. You tweet to questions to @Cxsquared.
+You could go a lot of different places from here by cleaning up the code and adding new features. You could have the responses matter by just adding simple branch checks to see what response the player gave. You could also create children blueprints to use this system as just a starting point for something bigger. I hope you enjoyed this tutorial. You tweet to questions to [@Cxsquared](https://twitter.com/cxsquared).
