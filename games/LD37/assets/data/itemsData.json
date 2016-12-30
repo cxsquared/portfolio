@@ -1,0 +1,208 @@
+{
+    "items":
+    [
+        {
+            "name": "Milk",
+            "image": "assets/images/milk.png",
+            "class": "RoomItem",
+            "X": 604,
+            "Y": 554,
+            "height": 31,
+            "width": 19,
+            "cleanFrames": [1],
+            "dirtyFrames": [0],
+            "time": 6,
+            "sound": "MilkSfx"
+        },
+        {
+            "name": "Tie",
+            "image": "assets/images/smalltie.png",
+            "class": "TieItem",
+            "X": 742,
+            "Y": 435,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 25    
+        },
+        {
+            "name": "Bed",
+            "image": "assets/images/bed.png",
+            "class": "RoomItem",
+            "X": 333,
+            "Y": 330,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 6,
+            "clean": false
+       },
+       {
+            "name": "Pillow",
+            "image": "assets/images/pillow.png",
+            "class": "RoomItem",
+            "X": 609,
+            "Y": 351,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 6,
+            "clean": false
+       },
+       {
+            "name": "Fridge",
+            "image": "assets/images/fridge.png",
+            "class": "RoomItem",
+            "X": 13,
+            "Y": 322,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 5,
+            "clean": false
+       },
+       {
+            "name": "Cabinets",
+            "image": "assets/images/cabinets.png",
+            "class": "RoomItem",
+            "X": 105,
+            "Y": 253,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 5,
+            "clean": false
+       },
+       {
+            "name": "DishWasher",
+            "image": "assets/images/dishWasher.png",
+            "class": "RoomItem",
+            "X": 115,
+            "Y": 487,
+            "height": 305,
+            "width": 252,
+            "cleanFrames": [0],
+            "dirtyFrames": [1],
+            "time": 4,
+            "sound": "CounterSfx"
+       },
+       {
+            "name": "Sink",
+            "image": "assets/images/sink.png",
+            "class": "RoomItem",
+            "X": 184,
+            "Y": 518,
+            "height": 94,
+            "width": 183,
+            "cleanFrames": [1,2,3,3,0],
+            "dirtyFrames": [1],
+            "time": 4,
+            "sound": "SinkSfx"
+       },
+       {
+            "name": "Trashcan",
+            "image": "assets/images/trashcan.png",
+            "class": "TrashcanItem",
+            "X": 266,
+            "Y": 550,
+            "height": 276,
+            "width": 148,
+            "cleanFrames": [0,1,2,3,4,5,6,7,7,6,5,4,3,2,1,0],
+            "dirtyFrames": [0,1,2,3,4,5,6,7,7,6,5,4,3,2,1,0],
+            "time": 4,
+            "sound": "TrashSfx"
+       },
+       {
+            "name": "Table",
+            "image": "assets/images/table.png",
+            "class": "RoomItem",
+            "X": 630,
+            "Y": 486,
+            "height": 177,
+            "width": 245,
+            "cleanFrames": [0],
+            "dirtyFrames": [1],
+            "time": 5,
+            "sound": "TableSfx"
+       },
+       {
+           "name": "Vacum",
+           "image": "assets/images/vacuum.png",
+           "class": "VacumItem",
+           "X": 925,
+           "Y": 320,
+           "height": 200,
+           "width": 150,
+           "cleanFrames": [0],
+           "dirtyFrames": [0],
+            "time": 4,
+            "sound": "VacuumSfx"
+       },
+       {
+            "name": "Shelf",
+            "image": "assets/images/shelf.png",
+            "class": "RoomItem",
+            "X": 1027,
+            "Y":244,
+            "height": 346,
+            "width": 184,
+            "cleanFrames": [0],
+            "dirtyFrames": [1],
+            "time": 6,
+            "sound": "ShelfSfx"
+       },
+       {
+            "name": "TV",
+            "image": "assets/images/tv.png",
+            "class": "RoomItem",
+            "X": 754,
+            "Y": 427,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 5,
+            "clean": false
+       },
+       {
+            "name": "Litterbox",
+            "image": "assets/images/litterbox.png",
+            "class": "RoomItem",
+            "X": 597,
+            "Y": 669,
+            "height": 198,
+            "width": 213,
+            "cleanFrames": [0],
+            "dirtyFrames": [1],
+            "time": 6,
+            "sound": "LitterboxSfx"
+       },
+       {
+            "name": "Book",
+            "image": "assets/images/smallbook.png",
+            "class": "BookItem",
+            "X": 1094,
+            "Y": 526,
+            "height": -1,
+            "width": -1,
+            "cleanFrames": [0],
+            "dirtyFrames": [0],
+            "time": 25    
+       }
+
+    ],
+    "LinkData":
+    { 
+        "Sink": ["DishWasher"],
+        "Shelf": ["Table", "Trashcan"],
+        "Trashcan": ["Vacum"],
+        "Milk": ["Sink"],
+        "Table": ["Sink"],
+        "Litterbox": ["Trashcan"]
+    }
+}
