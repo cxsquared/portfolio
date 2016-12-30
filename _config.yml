@@ -25,7 +25,5 @@ logo:             /assets/logo.svg
 social:
   links: ["https://twitter.com/cxsquared", "https://github.com/cxsquared", "https://soundcloud.com/cxsquared", "https://www.linkedin.com/in/cxsquared"]
 
-gems: [jekyll-paginate, jekyll-seo-tag, jekyll-swfobject]
-
 paginate:         5
 paginate_path: "/blog/page:num/"
