@@ -2,6 +2,7 @@
 title: Heading To GDC
 author: cxsquared
 layout: post
+category: blog
 ---
 So it&#8217;s less than a week before this year&#8217;s Game Developers Conference (GDC) and I can&#8217;t hold in my excitement. This will be my first time attending GDC, and I couldn&#8217;t begin to describe how terribly excited I am. Getting the chance to step my foot into the video game industry is beyond amazing. I&#8217;ve already stumbled upon so many wondrous talks and parties that could last a month let alone be shoved into a week. It&#8217;s overwhelming and perfect and I&#8217;m counting down everyday till it arrives.
 

@@ -7,22 +7,19 @@ title: Home
   <h1>Latest Games</h1>
   {% for post in site.posts %}
   {% if post.category == 'released' or post.category == 'gamejam' %}
-  {% capture counttwo %}{{ counttwo | plus: '1' }}{% endcapture %}
-  {% if counttwo == '1' or counttwo == '2' or counttwo == '3' %}
+  {% capture countone %}{{ countone | plus: '1' }}{% endcapture %}
+  {% if countone == '1' or countone == '2' or countone == '3' %}
   <div class="post">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
     </h2>
-
     <span class="post-date">{{ post.date | date_to_string }} </span>
-
     {% if post.image %}
     <img src="{{ site.baseurl }}/assets/{{ post.image }}">
     {% endif %}
     {{ post.excerpt }}
-
     <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
   </div>
   {% endif %}
@@ -32,23 +29,20 @@ title: Home
   <!-- Blog -->
   <h1>Latest Posts</h1>
   {% for post in site.posts %}
-  {% if post.category != 'game' and post.category != 'gamejam' and post.category != 'released' %}
-  {% capture count %}{{ count | plus: '1' }}{% endcapture %}
-  {% if count == '1' or count == '2' or count == '3' %}
+  {% if post.category == 'blog' %}
+  {% capture counttwo %}{{ counttwo | plus: '1' }}{% endcapture %}
+  {% if counttwo == '1' or counttwo == '2' or counttwo == '3' %}
   <div class="post">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
     </h2>
-
     <span class="post-date">{{ post.date | date_to_string }} </span>
-
     {% if post.image %}
     <img src="{{ site.baseurl }}/assets/{{ post.image }}">
     {% endif %}
     {{ post.excerpt }}
-
     <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
   </div>
   {% endif %}

@@ -2,6 +2,7 @@
 title: Pirate Panic! Global Game Jam 2015 Post-mortem
 author: cxsquared
 layout: post
+category: blog
 ---
 You can check out the game at <a title="GlobalGamJam.org" href="http://globalgamejam.org/2015/games/pirate-panic" target="_blank">GlobalGamJam.org</a> and check out the people that helped make the game [Tim](https://twitter.com/Drayfe),  [Josh](https://twitter.com/cwi_josh), and [Geoff](http://thehibberts.us/geoff/).
 
