@@ -3,7 +3,7 @@ markdown:       kramdown
 highlighter:    rouge
 
 # Permalinks
-permalink:      /:categories/:title
+permalink:      none
 
 # Setup
 title:          Chips and Bits
