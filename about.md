@@ -5,7 +5,7 @@ title: About
 <h2>Cody Claborn</h2>
 ![Cody Claborn]({{ site.baseurl }}/assets/mini.png)
 <h3>Programmer/Composer</h3>
-Hi! My name is Cody Claborn and I'm currently looking for work. I graduated with a Bachelors of Science in Music Technology in 2016. I am currently looking for work in either programming or audio. Game development is my main passion in life along with audio programming for games. My other hobbies include 3D printing, gaming, and playing saxophone. I'm always open to new opportunities and would love to hear from you.
+Hi! My name is Cody Claborn and I'm currently looking for work. I graduated with a Bachelor's of Science in Music Technology in 2016. I am currently looking for work in either programming or audio. Game development is my main passion in life along with audio programming for games. My other hobbies include 3D printing, gaming, and playing saxophone. I'm always open to new opportunities and would love to hear from you.
 
 If you have any questions or want to request more information you can [Contact Me on my site]({{ site.baseurl }}/contact/).
 
