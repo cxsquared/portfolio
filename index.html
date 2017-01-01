@@ -26,12 +26,36 @@ title: Home
   {% endif %}
   {% endfor %}
   <h3><a href="{{ site.baseurl }}/games/">More Games</a></h3>
+  <!--Tutorials-->
+  <h1>Latest Tutorials</h1>
+  {% for post in site.posts %}
+  {% if post.category == 'tutorial' %}
+  {% capture counttwo %}{{ counttwo | plus: '1' }}{% endcapture %}
+  {% if counttwo == '1' or counttwo == '2' or counttwo == '3' %}
+  <div class="post">
+    <h2 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+    <span class="post-date">{{ post.date | date_to_string }} </span>
+    {% if post.image %}
+    <img src="{{ site.baseurl }}/assets/{{ post.image }}">
+    {% endif %}
+    {{ post.excerpt }}
+    <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+  <h3><a href="{{ site.baseurl }}/tutorial/">More Tutorials</a></h3>
+
   <!-- Blog -->
   <h1>Latest Posts</h1>
   {% for post in site.posts %}
   {% if post.category == 'blog' %}
-  {% capture counttwo %}{{ counttwo | plus: '1' }}{% endcapture %}
-  {% if counttwo == '1' or counttwo == '2' or counttwo == '3' %}
+  {% capture countthree %}{{ countthree | plus: '1' }}{% endcapture %}
+  {% if countthree == '1' or countthree == '2' or countthree == '3' %}
   <div class="post">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">

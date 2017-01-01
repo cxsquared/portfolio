@@ -2,7 +2,7 @@
 layout: post
 title: Creating a Visual Novel in Unity
 tags: Unity, Tutorial, Visual Novel
-category: blog
+category: tutorial
 ---
 This tutorial will help you create a basic visual novel framework that you can use your own story and art in, as well as expand upon the framework itself with more functionality. I will say I’m not the best Unity dev and there are probably better ways to lay out this framework but this will give you a good start if you want to quickly get started with game development. You can see and download the games [source code on Github](https://github.com/cxsquared/Visual-Novel-Tutorial).  
 

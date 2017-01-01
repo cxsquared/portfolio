@@ -2,7 +2,7 @@
 layout: post
 title: Unreal 4 NPC Dialogue System
 tags: Unreal4, Tutorial, NPC, Dialogue
-category: blog
+category: tutorial
 ---
 Most games have some sort of feedback system to let the player know what's happening. These systems can inform the player if they are on the right path, give context to the story, and give help to the player. Dialogue is a great example of one of these feedback systems. For this tutorial I'm going to be showing you have to create an intractable dialogue system in [Unreal Engine 4](https://www.unrealengine.com/what-is-unreal-engine-4). You can download it for free on [their website](https://www.unrealengine.com/register). For this project you can checkout the source code on [my Github](https://github.com/cxsquared/Unreal4_NPC_Dialogue_System).
 

@@ -27,3 +27,6 @@ social:
 
 paginate:         5
 paginate_path: "/blog/page:num/"
+
+paginated_category: 'tutorial'
+posts_per_page: 5
