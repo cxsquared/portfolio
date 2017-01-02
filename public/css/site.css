@@ -1,0 +1,35 @@
+#search-container
+{
+    border:1px solid #B3E5FC;
+    border-radius: 3px;
+    background-color: #03A9F4;
+    margin-bottom: 1rem;
+}
+
+#search-container input
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: #03A9F4;
+    text-align: center;
+}
+
+#search-container ul
+{
+    position: absolute;
+    left: 1rem;
+    z-index: 1;
+    background-color: rgba(96, 125, 139, 0.9);
+    width: 14rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    border: 1px solid #B3E5FC;
+}
