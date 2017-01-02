@@ -37,7 +37,7 @@
 
       <!-- HTML Elements for Search -->
       <div id="search-container">
-          <input type="text" id="search-input" placeholder="search...">
+          <input type="text" id="search-input" placeholder="Search">
           <ul id="results-container"></ul>
       </div>
 
@@ -49,9 +49,9 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             json: '{{ site.baseurl }}/search.json',
-            searchREsulttemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-            noResultsText: 'No results found',
-            limit: 5,
+            searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+            noResultsText: 'No Results Found',
+            limit: 8,
             fuzzy: true
         })
       </script>
