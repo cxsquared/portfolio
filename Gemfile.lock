@@ -56,6 +56,7 @@ GEM
     safe_yaml (1.0.4)
     sass (3.4.23)
     slop (3.6.0)
+    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -67,6 +68,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-swfobject
   octopress-debugger
+  wdm (>= 0.1.0)
 
 BUNDLED WITH
    1.13.7
