@@ -35,6 +35,27 @@
       {% endcomment %}
       </nav>
 
+      <!-- HTML Elements for Search -->
+      <div id="search-container">
+          <input type="text" id="search-input" placeholder="search...">
+          <ul id="results-container"></ul>
+      </div>
+
+      <!-- Script pointing to jekyll-search.js -->
+      <script src="{{ site.baseurl }}/public/js/jekyll-search.js" type="text/javascript"></script>
+    
+      <script type="text/javascript">
+        SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '{{ site.baseurl }}/search.json',
+            searchREsulttemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+            noResultsText: 'No results found',
+            limit: 5,
+            fuzzy: true
+        })
+      </script>
+      
       <div class="music-player"> 
 	      <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/7355881&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
       </div>
