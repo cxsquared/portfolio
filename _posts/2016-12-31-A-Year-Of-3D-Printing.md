@@ -3,6 +3,7 @@ title: A Year of 3D Printing
 category: blog
 layout: post
 image: 3dprinting/allprints.png
+tags: blog, life, 3d, printing, maker, recap, 2016
 ---
 
 2016 was the year of 3D printing for me. I got a job with 3D printing, I got my own 3D printer, and I started selling my own 3D designs. I thought I'd start off 2017 by making a little post recapping my escapades.

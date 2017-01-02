@@ -3,6 +3,7 @@ title: Pirate Panic!
 layout: post
 category: gamejam
 image: pp.jpg
+tags: game, jam, pirate panic, unity, global
 ---
 
 Pirate Panic! is a multiplayer [Spaceteam](http://www.sleepingbeastgames.com/spaceteam/) inspired game built during the 2015 [Global Game Jam](http://globalgamejam.org) in 48 hours. I was a gameplay programmer on the project. You can checkout the game out on the [Pirate Panic Global Game Jam page](http://globalgamejam.org/2015/games/pirate-panic). You can also read my Post Modem [here on my blog]({{ site.baseurl }}{% post_url 2015-02-15-pirate-panic-global-game-jam-2015-post-mortem %}).

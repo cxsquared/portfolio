@@ -3,6 +3,7 @@ title: Down the Rabbit Hole
 layout: post
 category: gamejam
 image: dtrh1.jpg
+tags: ludum, dare, haxe, haxeflixel, game, jam
 ---
 
 Down the Rabbit Hole is a standard platformer built with [HaxeFlixel](http://haxeflixel.com/) in 48 hours for [Ludum Dare 31](http://ludumdare.com/compo/). This was my first Ludum Dare and my goal was to finish a game and place in the top 100 for audio. I'm proud to say I accomplished these goals. You can play the game either by clicking read more or over on the [Ludum Dare website](http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=23711). You can also checkout my source code over on my [Github](https://github.com/cxsquared/LD_OneScreen).

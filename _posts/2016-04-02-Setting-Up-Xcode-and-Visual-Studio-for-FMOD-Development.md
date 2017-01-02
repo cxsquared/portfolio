@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting Up Xcode and Visual Studio for FMOD Development
-tags: FMOD, Audio Programming, Game Development
+tags: FMOD, Audio Programming, Game Development, tutorial, game, cpp, c++, programming, visual, studio
 category: tutorial
 ---
 

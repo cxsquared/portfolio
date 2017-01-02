@@ -1,7 +1,7 @@
 ---
 title: The Chore LD37 Postmortem
 layout: post
-tags: Ludum Dare, Postmortem, LD37, The Chore
+tags: Ludum Dare, post, mortem, Postmortem, LD37, The Chore, 37, haxe, haxeflixel
 category: blog
 image: LD37/ld37_1.png
 ---

@@ -3,6 +3,7 @@ title: Return of Aetheria
 layout: post
 category: released
 image: roa2.jpg
+tag: school, alternate, reality, game, work, music, convention, con, flash, as3, indy, pop, con
 ---
 
 Return of Aetheria is an Alternate Reality game built for conventions that I worked on from January 2014 to June 2015. The game is a mixture of digital and analog gaming built during a class at [IUPUI](http://www.iupui.edu/). I was apart of the last 2 years out of the 3 that it was shown off. For the first year my role was Music Composer/Sound Engineer and Sponsorship Relations. My Second year involved me being a Gameplay Programmer. You can check out more about the project on the [Return of Aetheria website](http://returnofaetheria.org/).

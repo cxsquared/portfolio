@@ -2,6 +2,7 @@
 title: Down the Rabbit Hole Post-mortem
 layout: post
 category: blog
+tags: blog, down the rabbit hole, post, mortem, postmortem, ludum, dare, haxe, haxeflixel, music
 ---
 This was my first Ludum Dare (though not my first game jam) so I thought I do a little post-mortem about my experience. First off Ludum Dare is now my favorite game jam I&#8217;ve been in and I can&#8217;t wait to do another one. The community is the best game developer community I&#8217;ve ever seen. Now to the post-mortem thing. My main goal was to just finish a game. The game didn&#8217;t have to be fancy, I wasn&#8217;t trying to make some ground breaking new game mechanic, and the game didn&#8217;t have to be crazy good. I did however want to try and create a fairly complete and semi-polished game, and I think I did a decent job at that.
 

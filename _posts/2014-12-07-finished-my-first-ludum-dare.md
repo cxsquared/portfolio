@@ -3,6 +3,7 @@ title: Finished my First Ludum Dare!
 author: cxsquared
 category: blog
 layout: post
+tags: blog, ludum, dare, game, jam, down the rabbit hole, haxe, haxeflixel
 ---
 I've finally finished my first ever Ludum Dare! I'm really happy with how it turned out. Down the Rabbit Hole is a simple platformer that uses the previous levels as the tiles for the next level. It's pretty basic but I'm happy with how it all came together. The game was made using [Haxeflixel](haxeflixel.com/), [PyxelEdit](http://pyxeledit.com/) for graphics, and Logic for music.
 
