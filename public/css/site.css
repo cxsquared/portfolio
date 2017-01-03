@@ -46,3 +46,38 @@
         width: 14rem;
     }
 }
+
+.music-player {
+  visibility: hidden;
+  position: fixed;
+}
+
+@media (min-width: 48em) and (min-height: 34em) 
+{
+  .music-player 
+  {
+    visibility: visible;
+    position: relative;
+  }
+}
+
+@media (min-width: 48em)
+{
+  .sidebar .logo 
+  {
+    max-width: 19rem;
+    width: 19rem;
+    overflow: hidden;
+    margin-left: -3rem;
+  }
+}
+.social img {
+  width: 15%;
+  display: inline;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.music-player {
+
+}

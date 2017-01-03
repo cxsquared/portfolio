@@ -282,36 +282,6 @@ h1, h2, h3, h4 {
   font-size: 2rem;
 }
 
-.music-player {
-  visibility: hidden;
-  position: fixed;
-}
-
-@media (min-width: 48em) {
-  .sidebar .logo {
-    max-width: 19rem;
-    width: 19rem;
-    overflow: hidden;
-    margin-left: -3rem;
-  }
-
-  .music-player {
-    visibility: visible;
-    position: relative;
-  }
-}
-
-.social img {
-  width: 15%;
-  display: inline;
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-.music-player {
-
-}
-
 .highlight {
   background-color: #808587;
 }
