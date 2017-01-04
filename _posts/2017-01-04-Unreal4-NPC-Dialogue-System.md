@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Unreal 4 NPC Dialogue System
-tags: Unreal4, Tutorial, NPC, Dialogue
+tags: Unreal4, Tutorial, NPC, Dialogue, 4.13, edited, widget, blueprints
 category: tutorial
 ---
 Most games have some sort of feedback system to let the player know what's happening. These systems can inform the player if they are on the right path, give context to the story, and give help to the player. Dialogue is a great example of one of these feedback systems. For this tutorial I'm going to be showing you have to create an intractable dialogue system in [Unreal Engine 4](https://www.unrealengine.com/what-is-unreal-engine-4). You can download it for free on [their website](https://www.unrealengine.com/register). For this project you can checkout the source code on [my Github](https://github.com/cxsquared/Unreal4_NPC_Dialogue_System).
+
 
 {% include toc.html %}
 
@@ -104,7 +105,7 @@ So now we need to add a few variables. One is going to be a Widget just like the
 
 ![NPC Variables]({{ site.url }}/assets/u4NPC/17_NPCVariables.png)
 
-Let's get some functions going. We'll get the easy ones out of the way first. Most of the text functions will be similar if not the same as the player text functions. First create a function called CreateWidgets. The first node we'll create from the Create Widgets node is a sequence. So drag out and search for Sequence which should be under Flow Control. We are using this because we have two widgets to set up. For the first pin you can copy and paste the Create Widget function from the ThirdPersonCharacter. The only thing you need to change is make the Set into a DialogueWidget set instead of just a Widget. We are going to add an extra step to the Dialogue Widget creation and that is setting the color of the text. To do this drag out the pin from the Set function and search Get Dialogue. From the Dialogue pin drag out and search for Set Color and Opacity. Connect it to the Set Desired Size in Viewport and drag the Color variable from our variables into the In Color and Opacity. Then off the second pin in Sequence drag off and search for Create Widget. Set the class for this to WB Player Options. Drag our Options Widget variable in and click set. Drag both output pins of the Create WB Player Options Widget into this. Then we need to drag this into an Add to Viewport function and a Set Visibility Funciton. We don't need a set size because it fills the whole screen but do make sure the set visibility is set to hidden. The final function will look like this...
+Let's get some functions going. We'll get the easy ones out of the way first. Most of the text functions will be similar if not the same as the player text functions. First create a function called CreateWidgets. The first node we'll create from the Create Widgets node is a sequence. So drag out and search for Sequence which should be under Flow Control. We are using this because we have two widgets to set up. For the first pin you can copy and paste the Create Widget function from the ThirdPersonCharacter. The only thing you need to change is make the Set into a DialogueWidget set instead of just a Widget. We are going to add an extra step to the Dialogue Widget creation and that is setting the color of the text. To do this drag out the pin from the Set function and search Get Dialogue. From the Dialogue pin drag out and search for Set Color and Opacity. Connect it to the Set Desired Size in Viewport and drag the Color variable from our variables into the In Color and Opacity. Then off the second pin in Sequence drag off and search for Create Widget. Set the class for this to WB Player Options. Drag our Options Widget variable in and click set. Drag both output pins of the Create WB Player Options Widget into this. Then we need to drag this into an Add to Viewport function and a Set Visibility Function. We don't need a set size because it fills the whole screen but do make sure the set visibility is set to hidden. The final function will look like this...
 
 ![NPC Create Widget]({{ site.url }}/assets/u4NPC/18_NPCCreateWidgets.png)
 
@@ -152,6 +153,36 @@ Now to just handle the responding. Now I'll admit this isn't handled in the best
 
 Now one last step to actually getting input to work. Click on BP_NPC(self) under Component and go to the Details panel. Under Input change Auto Receive input from disabled to Player 0. Now I'll show you how to add an NPC to your game. Close the blueprint window and drag a BP_NPC from your Content Browser into your level. Now if you click on it you should see Color and NPCStatements under Default. The color is what ever you want the NPC text color to be. Now to add a conversation just click the plus(+) next to the NPCStatmentes. Now type what you want the NPC to say in the NPC Dialogue. To create options for the player just click the plus(+) next toe the Player Responses. Inside that you can set what the player will say. The GoToStatement should be set to what NPCStatement you want to go to when the player chooses that option. Under NPCStatments you can see a 0 which is labeling the NPCStatement. If you add more statements that number will grow and you can have the player go to any of those. If don't want the NPC to respond to the player just put -1 as the GoToStatement. Here's an example.
 
-![NPC Statment Example]({{ stie.url }}/assets/u4NPC/28_NPCStatement.png)
+![NPC Statement Example]({{ site.url }}/assets/u4NPC/28_NPCStatement.png)
 
-You could go a lot of different places from here by cleaning up the code and adding new features. You could have the responses matter by just adding simple branch checks to see what response the player gave. You could also create children blueprints to use this system as just a starting point for something bigger. I hope you enjoyed this tutorial. You tweet to questions to [@Cxsquared](https://twitter.com/cxsquared).
+You could go a lot of different places from here by cleaning up the code and adding new features. You could have the responses matter by just adding simple branch checks to see what response the player gave. You could also create children blueprints to use this system as just a starting point for something bigger. I hope you enjoyed this tutorial. Feel free to tweet your questions to [@Cxsquared](https://twitter.com/cxsquared).
+
+## Year After Edit
+
+So it was recently brought to my attention that my code wasn't actually fully working. Luckily there's an easy fix for this. The part that is broken is the NPC responses. Currently the NPC won't give it's response after you respond to it. This is caused by not sending the NPC text response to the actual Talk function. So to fix this just go into the BP_NPC, then go to the Respond function, and finally, near the end of the function, connect the NPC Dialogue pin from the Break Struct_NPCStatement and connect it to the Text pin in the Talk function leading from the False Branch pin.
+
+![NPC Response fix]({{ site.baseurl }}/assets/u4NPC/29_NPCFix.png)
+
+Going back and fixing that bug led me to fix a few other minor things. Here's a list of all the things I've fixed.
+
+The timer in the Talk function of both the NPC and Player blueprints don't actually reset because we never set the Timer variable to fix this. Simply go into each function then at the end create a Set Timer node and connect the Return Value from the Set Timer by Function Name into it.
+
+![NPC and Player Talk Timer Fix]({{ site.baseurl }}/assets/u4NPC/30_NPCTimerFix.png)
+
+I changed a compare conditional in the NPC Respond function to allow you to go back to the beginning of a dialogue branch. This fix is done by changing the Greater Than(>) conditional on the first Branch statement to a Greater Than of Equal To(>=).
+
+![NPC Response Conditional Fix]({{ site.baseurl }}/assets/u4NPC/31_NPCConditionalFix.png)
+
+I reset the player options and hide them when you leave the Overlap box. This is done by adding a OnComponentEndOverlap with the Box on the BP_NPC. From there Use a Branch to compare the Other Actor to the Get Player Character to make sure they match. Then call Set Visibility on the Options Widget with a value of Hidden. And then set Waiting For Response to false.
+
+![NPC Options Reset]({{ site.baseurl }}/assets/u4NPC/32_NPCOnExit.png)
+
+And the last thing I did was clean up the NPC Text widget placement. It was really bad when I first made this tutorial a year ago. Now the text should stay centered above the NPC players at all angles and I added a little extra flair by scaling the Text widget down the farther the player gets away from the NPC. I started by adding a few Float variables: ZTextOffset with a default value of 130, Min Text Scale Distance with a default value of 10, Max Text Scale Distance with a default value of 250, and finally Min Text Scale with a default value of .5. Now go into the Update Widget function in the BP_NPC and first replace the Project World Location To Widget Position with the function Convert World Location To Screen Location. Use the Get Player Controller for the Target pin. For the World Location pin first make a Get Actor Location pin and then Break the Vector output. Take the Z pin from that and add the Z Text Offset to it and send the X, Y, and Z values into a Make Vector node and use this value for the World Location pin.
+
+![NPC Screen Location Fix]({{ site.baseurl }}/assets/u4NPC/33_NPCWorldLocation.png)
+
+For the scaling trick call Set Render Scale with the target of the Dialogue Widget variable. For the Scale input first create a Get Distance To node. The Target should be self and the Other Actor should be a Get Player Character node. Then subtract the Min Text Scale Distance value from that and then divide the Max Text Scale Distance from that. Create a Lerp node with the A value set to 1, the B value set to the Min Text Scale variable and the Alpha value of the Get Distance To math stuff. Finally create a Clamp node and connect the Lerp output to the Value input pin and have the Min set to the Min Text Scale variable and the Max set to 1. Send that value into the X and Y of Make Vector 2D and send that output into the Scale pin.
+
+![NPC Scale Text]({{ site.baseurl }}/assets/u4NPC/34_NPCScaleText.png)
+
+Thanks to the readers who pointed out my errors. I always enjoy helping other game developers out so if you have any questions for find any problems feel free to leave a comment bellow, send a tweet to [@Cxsquared](https://twitter.com/cxsquared), or leave me a message on my [contact page]({{ site.baseurl }}/contact). 
