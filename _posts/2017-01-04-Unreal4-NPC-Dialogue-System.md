@@ -159,7 +159,7 @@ You could go a lot of different places from here by cleaning up the code and add
 
 ## Year After Edit
 
-So it was recently brought to my attention that my code wasn't actually fully working. Luckily there's an easy fix for this. The part that is broken is the NPC responses. Currently the NPC won't give it's response after you respond to it. This is caused by not sending the NPC text response to the actual Talk function. So to fix this just go into the BP_NPC, then go to the Respond function, and finally, near the end of the function, connect the NPC Dialogue pin from the Break Struct_NPCStatement and connect it to the Text pin in the Talk function leading from the False Branch pin.
+This tutorial was originally written at the end of 2015, but recently it was brought to my attention that my code wasn't actually fully working. Luckily there's an easy fix for this. The part that is broken is the NPC responses. Currently the NPC won't give it's response after you respond to it. This is caused by not sending the NPC text response to the actual Talk function. So to fix this just go into the BP_NPC, then go to the Respond function, and finally, near the end of the function, connect the NPC Dialogue pin from the Break Struct_NPCStatement and connect it to the Text pin in the Talk function leading from the False Branch pin.
 
 ![NPC Response fix]({{ site.baseurl }}/assets/u4NPC/29_NPCFix.png)
 
