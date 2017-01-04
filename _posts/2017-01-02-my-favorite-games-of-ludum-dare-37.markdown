@@ -5,6 +5,7 @@ tags: ld, ludum, dare, 37, ld37, game, jam
 category: blog
 image: LD37/favoriteLD.png
 excerpt_separator: <!-- excerpt -->
+description: A recap of my favorite games from the 37th Ludum Dare game jam.
 ---
 
 With the final hours of LD37 coming to a close (10 hours left while I was writing this) I figured I'd recap some of my favorite games.
