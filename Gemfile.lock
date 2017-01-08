@@ -29,7 +29,7 @@ GEM
       jekyll (>= 1.2.1)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
-    kramdown (1.13.1)
+    kramdown (1.13.2)
     liquid (3.0.6)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -48,7 +48,7 @@ GEM
     pry-byebug (3.4.2)
       byebug (~> 9.0)
       pry (~> 0.10)
-    public_suffix (2.0.4)
+    public_suffix (2.0.5)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
@@ -56,7 +56,6 @@ GEM
     safe_yaml (1.0.4)
     sass (3.4.23)
     slop (3.6.0)
-    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -68,7 +67,6 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-swfobject
   octopress-debugger
-  wdm (>= 0.1.0)
 
 BUNDLED WITH
    1.13.7
