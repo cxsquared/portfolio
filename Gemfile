@@ -8,4 +8,5 @@ group :jekyll_plugins do
 	gem 'jekyll-swfobject'
 	gem 'wdm', '>=0.1.0' if Gem.win_platform?
     gem 'octopress-debugger'
+    gem 'jekyll-sitemap'
 end
