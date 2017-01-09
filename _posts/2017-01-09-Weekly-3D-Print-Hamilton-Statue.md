@@ -5,7 +5,7 @@ tags: hamilton, 3d printing, star, statue, weekly, musical, arduino, neopixel
 category: blog
 description: The process of designing and 3D printing a statue based on the musical Hamilton with an Arduino and NeoPixel lights.
 excerpt_separator: <!-- excerpt -->
-image: 3dprinting/weekly/hamstatue/hamiltonFull.gif
+image: 3dprinting/weekly/hamStatue/hamiltonFull.gif
 imagePath: /assets/3dprinting/weekly/hamStatue/
 youtube: true
 ---
