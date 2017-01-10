@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+          <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
+          <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
+          <link rel="stylesheet" href="{{ site.baseurl }}/public/css/hyde.css">
+          <link rel="stylesheet" href="{{ site.baseurl }}/public/css/site.css">
+        <!--meta http-equiv="refresh" content="1; url={% post_url 2017-01-04-Unreal4-NPC-Dialogue-System %}"-->
+                  <!-- Piwik -->
+          <script type="text/javascript">
+          var _paq = _paq || [];
+            _paq.push(['trackPageView']);
+              _paq.push(['enableLinkTracking']);
+                (function() {
+                 var u="//codyclaborn.me/piwik/";
+                     _paq.push(['setTrackerUrl', u+'piwik.php']);
+                     _paq.push(['setSiteId', 1]);
+                         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                           })();
+          </script>
+        <script type="text/javascript">
+            setTimeout(function() {window.location.href = "{{ post_url }}"; }, 500);
+        </script>
+        <title>Page Redirection</title>
+    </head>
+    <body>
+        {% include sidebar.html %}
+        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
+        If you are not redirected automatically, follow this <a href='{{ post_url }}'>{{ include.post_text }}</a>.
+    </body>
+</html>
