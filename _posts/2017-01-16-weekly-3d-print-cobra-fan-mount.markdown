@@ -11,6 +11,8 @@ youtube: true
 
 This weeks 3D print was a much needed fan upgrade for my printer. There are a lot of fan mounts out there for the [Wanhao][wanhao] style printer. I went with the [Cobra - Rear mounted cooler][thingiverse] because of it's looks and placement on the printer. You can check out the .STL and other files over at [Thingiverse.com/thing:1090433][thingiverse].
 
+![Thingiverse details]({{site.baseurl}}{{ page.imagePath }}thingiverseData.png)
+
 Almost all tutorials and forums will tell you that upgrading your fan is one of the most important things to do with the [Wanhao i3][wanhao] style printer. I have the [Monoprice Makerselect][makerselect] printer which is just a re-skin of the [Wanhao i3][wanhao]. If you check out [Thingiverse][thingLink] you'll see a few different and popular fan mounts for this style of printer. The most popular is the [DiiiCooler](http://www.thingiverse.com/thing:1025471) which I did try but wasn't a fan of because it covers so much of the nozzle head. Instead I chose to go with the [Cobra - Rear mounted cooler][thingiverse]. It's both good looking and gives you a nice clear view of the nozzle head while printing. Since I try and record time-lapses of a lot of my prints I really like having a better view of the nozzle while it's printing. I also already had the screws for this mount which was nice. I tried a few other mounts but they needed fairly long screws which I didn't have.
 
 ![Front view of the new fan mount]({{site.baseurl}}{{ page.imagePath }}fanFront.jpg)
