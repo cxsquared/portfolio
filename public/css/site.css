@@ -81,3 +81,11 @@
 .music-player {
 
 }
+
+.sidebar p {
+  margin-bottom: 0rem;
+}
+
+.lead {
+  font-size: .8rem;
+}
