@@ -128,6 +128,7 @@ function adjust_textarea(h) {
 <form class="form-style-7" action="https://getsimpleform.com/messages?form_api_token=7d46ee5de1f60b07cddbe5f8282aca7c" method="post" id="contact-form" onSubmit="alert('Thank you for your feedback.');">
 	<input type="hidden" name="utf8" value="x">
 	<input type="hidden" name="redirect_to" value="{{ site.url }}">
+	<input id="fake_email" type="email" name="email" value="" style="display:none">
 	<ul>
 		<li>
 		    	<label for="name">Name</label>
@@ -135,8 +136,8 @@ function adjust_textarea(h) {
 			<span>Enter your name here</span>
 		</li>
 		<li>
-			<label for="email">Email</label>
-			<input type="email" name="email" maxlength="100" required>
+			<label for="real_email">Email</label>
+			<input type="email" name="real_email" maxlength="100" required>
 			<span>Enter a valid email address</span>
 		</li>
 		<li>
@@ -149,3 +150,13 @@ function adjust_textarea(h) {
 		</li>
 	</ul>
 </form>
+
+<script type="text/javascript">
+	$("contact-form").submit(function(ev) {
+		ev.preventDefault();
+
+		if (document.getElementById('fake_email').value === "") {
+			this.submit();
+		}
+	});
+</script>
